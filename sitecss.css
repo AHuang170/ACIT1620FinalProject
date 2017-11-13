@@ -1,0 +1,284 @@
+#content{
+    position:absolute;
+    top: 20px;
+    left: 20px;
+}
+
+#control{
+    position:fixed;
+    z-index: 999;
+    right:0px;
+    top:0px;
+    width:150px;
+    height:200px;
+    
+    
+}
+
+#info_box{
+    z-index: 1;
+    position: absolute;
+    box-sizing: content-box;
+    border: 5px groove;
+    border-color: bisque;
+    margin: auto;
+    width: 300px;
+    height: 200px;
+    visibility: hidden;
+}
+
+#page_1{
+    position: absolute;
+    visibility: hidden;
+    cursor: pointer;
+    height: 100%;
+    width: 50%;
+    left:0px;
+    right:0px;
+    background: black;
+}
+
+#p1_name{
+    color: white;
+    text-align: center;
+    height: 15px;
+    width:100%;
+}
+#p1_rare{
+    color:orange;
+    text-align: left;
+    height: 15px;
+    width: 95%;
+    border-bottom: 2px solid;
+    border-bottom-color: chocolate;
+}
+
+#atk{
+    width: 100%;
+    height: 15px;
+}
+#atk_lable{
+    display: inline-block;
+    color: dodgerblue;
+    width: 40%;
+    left: 0px;
+}
+
+#atk_val{
+    color: white;
+    display: inline-block;
+    text-align: right;
+    width: 40%;
+    right: 0px;
+}
+
+#ele{
+    width: 100%;
+    height: 15px;
+}
+
+#ele_lable{
+    display: inline-block;
+    color: dodgerblue;
+    width: 40%;
+    left: 0px;
+}
+
+#ele_val{
+    color: white;
+    display: inline-block;
+    text-align: right;
+    width: 40%;
+    right: 0px;
+}
+
+#sharp{
+    color: dodgerblue;
+    width: 95%;
+    height: 17px;
+    border-top: 2px solid;
+    border-top-color: chocolate;
+}
+
+#sharp_img_cont{
+    width:95%;
+    height:17px;
+    
+}
+
+#sharp_img{
+    height:auto;
+    width: 95%;
+    border: solid;
+    border-color: gainsboro;
+}
+
+#sharp_p{
+    color: dodgerblue;
+    width: 95%;
+    height: 17px;
+
+}
+
+#sharp_p_img_cont{
+    width:95%;
+    height:17px;
+    border-bottom: 2px solid;
+    border-bottom-color: chocolate;
+}
+
+#sharp_p_img{
+    height:auto;
+    width: 95%;
+    border: solid;
+    border-color: gainsboro;
+}
+
+#slot{
+    height:15px;
+    width:100%;
+}
+
+#slot_lable{
+    color: dodgerblue;
+    display: inline-block;
+    width:40%;
+    left:0px;
+}
+
+#slot_val{
+    color: white;
+    text-align: right;
+    display: inline-block;
+    width: 40%;
+    right: 0px;
+}
+
+#aff{
+    height:15px;
+    width:100%;
+}
+
+#aff_lable{
+    color: dodgerblue;
+    text-align: left;
+    display: inline-block;
+    width: 40%;
+    left: 0px;
+}
+
+#aff_val{
+    color: white;
+    text-align: right;
+    display: inline-block;
+    width: 40%;
+    right: 0px;
+}
+
+#weap_type{
+    position: absolute;
+    bottom: 2px;
+    height: 17px;
+    width: 95%;
+    border-top: 2px solid;
+    border-top-color: chocolate;
+}
+
+#weap_type_lable{
+    
+    color: dodgerblue;
+    text-align: left;
+    display: inline-block;
+    width: 40%;
+    left: 0px;
+}
+
+#weap_type_val{
+    color: white;
+    text-align: right;
+    display: inline-block;
+    width: 40%;
+    right: 0px;
+}
+
+#page_2{
+    position: absolute;
+    visibility: hidden;
+    cursor: pointer;
+    height: 100%;
+    width: 50%;
+    left:0px;
+    right:0px;
+    background: black;
+}
+
+#flavour{
+    color: white;
+    overflow: auto;
+    width: 100%;
+    height: 150px;
+}
+
+#info_img{
+    position: absolute;
+    top: 0px;
+    left: 150px;
+    width: 50%;
+    height: 100%;
+}
+
+#lg_img{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+        
+}
+
+.panel{
+    position: absolute;
+    
+    height: 100px;
+    width: 98px;
+    border: 2px solid;
+    border-color: transparent;
+    
+    
+}
+
+.conn_panel{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+
+    
+    
+}
+
+.tree{
+    position: absolute;
+    background-color: bisque;
+}
+
+.ImgPan{
+    position: absolute;
+    top:20px;
+    left:0px;
+    height:80px;
+    width:100%;
+}
+
+.ConnPan{
+    position: absolute;
+    top:0px;
+    left:0px;
+    height:100%;
+    width:100%;
+}
+
+.infoBox{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
