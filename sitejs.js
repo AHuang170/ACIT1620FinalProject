@@ -131,7 +131,7 @@ function delete_tree(){
         
         node_num = 0;
         selected_node = -1;
-            
+        remove_info_box();
     }
     
 }
