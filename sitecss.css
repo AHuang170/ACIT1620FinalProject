@@ -45,9 +45,10 @@
     width:100%;
 }
 #p1_rare{
+    position: relative;
     color:orange;
     text-align: left;
-    height: 15px;
+    height: 18px;
     width: 95%;
     border-bottom: 2px solid;
     border-bottom-color: chocolate;
@@ -74,7 +75,7 @@
 
 #ele{
     width: 100%;
-    height: 15px;
+    height: 17px;
 }
 
 #ele_lable{
@@ -219,6 +220,60 @@
     height: 150px;
 }
 
+#page_3{
+    position: absolute;
+    visibility: hidden;
+    cursor: pointer;
+    height: 100%;
+    width: 50%;
+    left:0px;
+    right:0px;
+    background: black;
+}
+
+#upgrade{
+    border-bottom: 2px solid;
+    border-bottom-color: chocolate;
+}
+
+.mat_panel{
+    height: 80px;
+    width: 95%;
+
+}
+
+#craft{
+    height: 80px;
+    width: 95%;
+}
+
+.lable{
+    color: dodgerblue;
+    text-align: left;
+    display: inline-block;
+    width: 40%;
+    right: 0px;
+    height: 15px;
+}
+
+.value{
+    color: white;
+    text-align: right;
+    display: inline-block;
+    width: 40%;
+    left: 0px;
+    height: 15px;
+    
+}
+
+.cat_lable{
+    color: white;
+    font-size: 6pt;
+    width: 100%;
+    height: 5px;
+}
+
+
 #info_img{
     position: absolute;
     top: 0px;
@@ -250,9 +305,7 @@
 .conn_panel{
     position: absolute;
     height: 100px;
-    width: 100px;
-
-    
+    width: 100px;   
     
 }
 

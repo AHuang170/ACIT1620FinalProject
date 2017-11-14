@@ -137,33 +137,38 @@ function delete_tree(){
 }
 
 function toggle_page(page_num){
-    if(page_num == '1'){
-        document.getElementById("page_1").style.visibility = "hidden";
-        document.getElementById("page_2").style.visibility = "visible";
-    }
-    else{
-        document.getElementById("page_1").style.visibility = "visible";
-        document.getElementById("page_2").style.visibility = "hidden";
+    switch(page_num){
+        case 1:
+            document.getElementById("page_1").style.visibility = "hidden";
+            document.getElementById("page_2").style.visibility = "visible";
+            document.getElementById("page_3").style.visibility = "hidden";
+            break;
+        
+        case 2:
+            document.getElementById("page_1").style.visibility = "hidden";
+            document.getElementById("page_2").style.visibility = "hidden";
+            document.getElementById("page_3").style.visibility = "visible";
+            break
+            
+        case 3:
+            document.getElementById("page_1").style.visibility = "visible";
+            document.getElementById("page_2").style.visibility = "hidden";
+            document.getElementById("page_3").style.visibility = "hidden";
+            
     }
 }
 
 function disp_info_box(x, y, tree_arr){
-    if (info_box_present == false){
-        document.getElementById("info_box").style.top = (y* 100 + 20)+'px';
-        document.getElementById("info_box").style.left = (x*100 +102)+'px';
-        document.getElementById("info_box").style.visibility = "visible";
-        document.getElementById("page_1").style.visibility = "visible";
-        document.getElementById("page_2").style.visibility = "hidden";
-    }
-    else{
+    if (info_box_present != false){
         remove_info_box();
-        
-        document.getElementById("info_box").style.top = (y* 100 + 20)+'px';
-        document.getElementById("info_box").style.left = (x*100 +102)+'px';
-        document.getElementById("info_box").style.visibility = "visible";
-        document.getElementById("page_1").style.visibility = "visible";
-        document.getElementById("page_2").style.visibility = "hidden";
     }
+        
+    document.getElementById("info_box").style.top = (y* 100 + 20)+'px';
+    document.getElementById("info_box").style.left = (x*100 +102)+'px';
+    document.getElementById("info_box").style.visibility = "visible";
+    document.getElementById("page_1").style.visibility = "visible";
+        
+
     info_box_present = true;
     update_info_box(tree_arr[y][x]);
     
@@ -177,6 +182,7 @@ function remove_info_box(){
     document.getElementById("info_box").style.visibility = "hidden";
     document.getElementById("page_1").style.visibility = "hidden";
     document.getElementById("page_2").style.visibility = "hidden";
+    document.getElementById("page_3").style.visibility = "hidden";
     info_box_present = false;
 }
 
