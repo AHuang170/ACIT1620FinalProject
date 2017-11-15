@@ -1,21 +1,20 @@
+#background{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+    left: 0px;
+    background-image: url(Img/background.jpg);
+    background-size:cover;
+}
+
 #content{
     position:absolute;
-    top: 20px;
-    left: 20px;
+    top: 50px;
+    left: 400px;
 }
 
-#control{
-    position:fixed;
-    z-index: 999;
-    right:0px;
-    top:0px;
-    width:150px;
-    height:200px;
-    
-    
-}
-
-/* Info box styles */
+/* ------------------------------------------------------ Info box styles ------------------------------------------------------ */
 #info_box{
     z-index: 1;
     position: absolute;
@@ -27,6 +26,7 @@
     height: 200px;
     top: -200px;
     left: 0px;
+    background-color: black;
     visibility: hidden;
     opacity = 0;
     transition: 500ms;
@@ -92,10 +92,10 @@
     position: absolute;
     display: block;
     cursor: pointer;
-    height: 83%;
+    height: 82%;
     width: 50%;
     left:0px;
-    top:17%;
+    bottom: 0px;
     background: black;
 }
 
@@ -264,15 +264,26 @@
         
 }
 
+.infoBox{
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* ------------------------------------------------------ End of Info box styles ------------------------------------------------------ */
+
+/* ------------------------------------------------------ Tree styles ------------------------------------------------------ */
 .panel{
     position: absolute;
     
     height: 100px;
     width: 98px;
-    border: 2px solid;
+    border: 2px ridge;
     border-color: transparent;
-    
-    
+    background-color: black;
+    color: white;
+    text-align: center;
+    cursor: pointer;
 }
 
 .conn_panel{
@@ -289,7 +300,7 @@
 
 .ImgPan{
     position: absolute;
-    top:20px;
+    bottom: 0px;
     left:0px;
     height:80px;
     width:100%;
@@ -302,9 +313,215 @@
     height:100%;
     width:100%;
 }
+/* ------------------------------------------------------ End of Tree styles ------------------------------------------------------ */
 
-.infoBox{
+/* ------------------------------------------------------ Control styles ------------------------------------------------------ */
+#control{
+    position:fixed;
+    z-index: 999;
+    right:0px;
+    top:50px;
+    width:150px;
+    height:200px;
+    
+    
+}
+/* ------------------------------------------------------ End of Control styles -----------------------------------------------*/
+
+/* ------------------------------------------------------ Options styles -----------------------------------------------*/
+#options{
+    
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    visibility: visible;
+    opacity: 1;
+    transition: 200ms;
+    min-height: 200px;
+    min-width: 170px;
+    background-color: steelblue;
+    border-right: 1px solid;
+    border-right-color: darkgoldenrod;
+}
+
+#options_containter{
+    
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: steelblue;
+
+    
+}
+
+#options_header{
+    z-index: 56;
     position: relative;
-    display: inline-block;
+    display: block;
+    height:5%;
+    min-height: 20px;
+    width: 100%;
+    background-color: steelblue;
+
+}
+
+#options_top{
+    z-index: 55;
+    position: relative;
+    display: block;
+    height: 10%;
+    min-height: 40px;
+    width: 100%;
+    background-color: steelblue;
+    border-right: 2px ridge;
+    border-right-color: darkgoldenrod;
+    border-top: 2px ridge;
+    border-top-color: darkgoldenrod;
+    
+}
+
+#op_overview{
+    height: 50%;
+    color: antiquewhite;
     cursor: pointer;
 }
+
+#op_weap{
+    height: 50%;
+    color: antiquewhite;
+    cursor: pointer;
+}
+
+#options_middle{
+    z-index: 54;
+    position: relative;
+    display: block;
+    height: 5%;
+    min-height: 20px;
+    width: 100%;
+    transition: 50ms;
+    background-color: steelblue;
+    border-right: 2px ridge;
+    border-right-color: darkgoldenrod;
+}
+
+#weap_cont{
+    
+    height: 280px;
+    top: -280px;
+    left: 0px;
+    
+}
+
+.equip_cont{
+    position: absolute;
+    border-right: 2px ridge;
+    border-right-color: darkgoldenrod;
+    width: 100%;
+    background-color: lightsteelblue;
+}
+
+.equip_op{
+    
+    height: 20px;
+    width: 100%;
+    text-align: center;
+    border-top: 1px groove;
+    border-top-color: whitesmoke;
+    border-bottom: 1px solid;
+    border-bottom-color: whitesmoke;
+    cursor: pointer;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    
+}
+
+#op_armor{
+    
+    height: 100%;
+    color: antiquewhite;
+}
+
+#arm_cont{
+    
+    height: 140;
+    top: -140px;
+    left: 0px;
+}
+
+#options_bottom{
+    z-index: 50;
+    position: relative;
+    display: block;
+    height: 5%;
+    min-height: 20px;
+    width: 100%;
+    transition: 50ms;
+    background-color: steelblue;
+    border-right: 2px ridge;
+    border-right-color: darkgoldenrod;
+    border-bottom: 2px ridge;
+    border-bottom-color: darkgoldenrod;
+}
+
+#op_bookmk{
+    height: 100%;
+    color: antiquewhite;
+    cursor: pointer;
+}
+
+.options_info_line{
+    width: 100%;
+    border-bottom: 1px groove;
+    border-top: 1px groove;
+    cursor: pointer;
+    text-align: center;
+}
+
+#options_toggle{
+    z-index: 51;
+    position: absolute;
+    height:50px;
+    width: 50px;
+    top: 0px;
+    right: -50px;
+    
+}
+
+#toggle_img{
+    z-index: 52;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+     
+}
+
+#toggle_button{
+    z-index: 0;
+    position: fixed;
+    height:50px;
+    width: 50px;
+    top: 0px;
+    left: 0px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 200ms;
+}
+
+#toggle_image{
+
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+
+/* ------------------------------------------------------ End of Options styles -----------------------------------------------*/

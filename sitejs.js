@@ -10,6 +10,9 @@ var node_num = 0;
 var selected_node = -1;
 var info_box_present = false;
 
+var weap_toggle = 0;
+var arm_toggle = 0;
+
 function disp_Node(x, y, parent_id, tree_arr){
     var nDiv = document.createElement('div');
     var nImg = document.createElement('img');
@@ -84,7 +87,9 @@ function disp_Tree(tree_arr){
     nDiv.style.position = 'absolute';
     nDiv.style.top = '0px';
     nDiv.style.left = '0px';
-    
+    nDiv.style.border = "1px outset";
+    nDiv.style.backgroundImage = "url(Img/tree_back.jpg)";
+    nDiv.style.backgroundSize = "cover";
     
     
     var height = tree_arr.length * 100;
@@ -97,8 +102,8 @@ function disp_Tree(tree_arr){
     
     width *= 100;
     
-    nDiv.style.height = height+'px';
-    nDiv.style.width = width+'px';
+    nDiv.style.height = (height) + 50+'px';
+    nDiv.style.width = (width + 50)+'px';
     
     document.getElementById("content").appendChild(nDiv);
     
@@ -139,6 +144,7 @@ function delete_tree(){
         node_num = 0;
         selected_node = -1;
         remove_info_box();
+
     }
     
 }
@@ -241,4 +247,78 @@ document.getElementById('gen_button').addEventListener("click", function(){
 document.getElementById('del_button').addEventListener("click", function(){
     
     delete_tree();
+});
+
+document.getElementById("toggle_img").addEventListener("click", function(){
+    document.getElementById("options").style.visibility = 'hidden';
+    document.getElementById("options").style.opacity = '0';
+    
+    document.getElementById("toggle_button").style.visibility = 'visible';
+    document.getElementById("toggle_button").style.opacity = '1';
+
+});
+
+document.getElementById("toggle_button").addEventListener("click", function(){
+    document.getElementById("toggle_button").style.visibility = 'hidden';
+    document.getElementById("toggle_button").style.opacity = '0';
+    
+    document.getElementById("options").style.visibility = 'visible';
+    document.getElementById("options").style.opacity = '1';
+
+});
+
+document.getElementById("op_weap").addEventListener("click", function(){
+    var element1 = document.getElementById("options_middle");
+    var style1 = window.getComputedStyle(element1);
+    var att_value1 = parseInt(style1.getPropertyValue('top'));
+    
+    var element2 = document.getElementById("options_bottom");
+    var style2 = window.getComputedStyle(element2);
+    var att_value2 = parseInt(style1.getPropertyValue('top'));
+    
+    if(weap_toggle == 0){
+        element1.style.top = (att_value1 + 280) + 'px';
+        
+        weap_toggle = 1;
+        
+        if(arm_toggle == 1){
+            element2.style.top = (att_value2 + 420) + 'px';
+        }
+        else{
+            element2.style.top = (att_value2 + 280) + 'px';
+        }
+        
+    }
+    else{
+        element1.style.top = (att_value1 - 280) + 'px';
+        
+        if(arm_toggle == 1){
+            element2.style.top = (att_value2 - 140) + 'px';
+        }
+        else{
+            element2.style.top = (att_value2 - 280) + 'px';
+        }
+        
+        weap_toggle = 0;
+    }
+    
+
+});
+
+document.getElementById("op_armor").addEventListener("click", function(){
+    var element1 = document.getElementById("options_bottom");
+    var style1 = window.getComputedStyle(element1);
+    var att_value1 = parseInt(style1.getPropertyValue('top'));
+    
+    if(arm_toggle == 0){
+        element1.style.top = (att_value1 + 140) + 'px';
+        arm_toggle = 1;
+    }
+    else{
+        element1.style.top = (att_value1 - 140) + 'px';
+        arm_toggle = 0;
+    }
+    
+    console.log(att_value1);
+
 });

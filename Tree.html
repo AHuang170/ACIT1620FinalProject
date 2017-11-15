@@ -2,12 +2,13 @@
 <html>
     <head>
         <title>Tree</title>
+        <link href="bootstrap/css/bootstrap-grid.css" rel="stylesheet" type="text/css"/>
         <link href="sitecss.css" rel="stylesheet" type="text/css"/>
     </head>
     
     
     <body>
-        
+        <div id="background"></div>
         <div id="content">
             <div id="info_box">
                 <div id="info_img">
@@ -22,8 +23,8 @@
                 <div id="page_1" class="info_page" onclick = "toggle_page(1)">
                     
                     <div class = "info_line">
-                        <div id="atk_lable" class = "lable">Attack</div>
-                        <div id="atk_val" class = "value">1200</div>
+                        <div id="atk_lable" class = "lable bottom-align-text">Attack</div>
+                        <div id="atk_val" class = "value bottom-align-text">1200</div>
                     </div>
                     
                     <div class = "info_line">
@@ -129,6 +130,61 @@
             </div>
         </div>
         
+        <div id="toggle_button">
+            <img id="toggle_image" src="Img/toggle.png"/>
+        </div>
+        
+        <div id = "options" class = "col-6 col-xm-5 col-sm-4 col-md-3 col-lg-2">
+            <div id= "options_containter">
+                <div id="options_header"></div>
+                <div id="options_top">
+                    <div id="op_overview" class="options_info_line">Home</div>
+                    <div id="op_weap" class="options_info_line">Weapons</div>
+                </div>
+                <div id="options_middle">
+                    <div id="weap_cont" class="equip_cont">
+                        <div id='gs'  class="equip_op">Greatsword</div>
+                        <div id='ls'  class="equip_op">Long Sword</div>
+                        <div id='sns' class="equip_op">Sword and Shield</div>
+                        <div id='db'  class="equip_op">Dual Blades</div>
+                        <div id='ham' class="equip_op">Hammer</div>
+                        <div id='hrn' class="equip_op">Hunting Horn</div>
+                        <div id='lan' class="equip_op">Lance</div>
+                        <div id='gl'  class="equip_op">Gunlance</div>
+                        <div id='sa'  class="equip_op">Switch Axe</div>
+                        <div id='cb'  class="equip_op">Charge Blade</div>
+                        <div id='ig'  class="equip_op">Insect Glaive</div>
+                        <div id='lbg' class="equip_op">Light Bowgun</div>
+                        <div id='hbg' class="equip_op">Heavy Bowgun</div>
+                        <div id='bow' class="equip_op">Bow</div>
+
+                    </div>
+                    
+                    <div id="op_armor" class="options_info_line">Armor</div>
+                </div>
+                <div id="options_bottom">
+                    <div id="arm_cont"class="equip_cont">
+                        <div id='lrb' class="equip_op">Low Rank Bladmaster</div>
+                        <div id='lrg' class="equip_op">Low Rank Gunner</div>
+                        <div id='hrb' class="equip_op">High Rank Bladmaster</div>
+                        <div id='hrg' class="equip_op">High Rank Bladmaster</div>
+                        <div id='grb' class="equip_op">G Rank Bladmaster</div>
+                        <div id='grg' class="equip_op">G Rank Bladmaster Horn</div>
+                        <div id='rel' class="equip_op">Relic</div>
+
+                    </div>
+                    
+                    <div id="op_bookmk" class="options_info_line">Bookmark</div>
+                </div>
+                
+                
+                <div id = "options_toggle" >
+                    <img id = toggle_img src="Img/toggle.png"/>
+                </div>
+            </div>
+            
+        </div>
+        
         <div id="control">
             <select id="tree_selection">
                 
@@ -140,5 +196,6 @@
         </div>
         
         <script src="sitejs.js"></script>
+        <script src="bootstrap/js/bootstrap.js"></script>
     </body>
 </html>
