@@ -15,6 +15,7 @@
     
 }
 
+/* Info box styles */
 #info_box{
     z-index: 1;
     position: absolute;
@@ -24,262 +25,234 @@
     margin: auto;
     width: 300px;
     height: 200px;
+    top: -200px;
+    left: 0px;
     visibility: hidden;
+    opacity = 0;
+    transition: 500ms;
 }
 
 #page_1{
-    position: absolute;
     visibility: hidden;
-    cursor: pointer;
-    height: 100%;
-    width: 50%;
-    left:0px;
-    right:0px;
-    background: black;
+    opacity = 0;
+    transition: 500ms;
 }
 
-#p1_name{
+#page_2{
+    visibility: hidden;
+    opacity = 0;
+    transition: 500ms;
+}
+
+#page_3{
+    visibility: hidden;
+    opacity = 0;
+    transition: 500ms;
+}
+
+#page_4{
+    visibility: hidden;
+    opacity = 0;
+    transition: 500ms;
+}
+
+#header{
+    position: absolute;
+    display: block;
+    background-color: black;
+    width: 50%;
+    height: 17%;
+    left: 0px;
+    top: 0px;
+}
+
+.name{
+    position: absolute;
     color: white;
     text-align: center;
-    height: 15px;
-    width:100%;
+    top: 0px;
+    left: 0px;
+    height: 50%;
+    width: 100%;
 }
-#p1_rare{
-    position: relative;
+.rare{
+    position: absolute;
     color:orange;
     text-align: left;
-    height: 18px;
+    height: 50%;
     width: 95%;
-    border-bottom: 2px solid;
+    bottom: 0px;
+    left: 0px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
     border-bottom-color: chocolate;
 }
 
-#atk{
-    width: 100%;
-    height: 15px;
+.info_page{
+    position: absolute;
+    display: block;
+    cursor: pointer;
+    height: 83%;
+    width: 50%;
+    left:0px;
+    top:17%;
+    background: black;
 }
-#atk_lable{
+
+
+.lable{
+    text-align: left;
     display: inline-block;
-    color: dodgerblue;
-    width: 40%;
+    width: 46%;
     left: 0px;
+    height: 100%;
+}
+
+.value{
+    text-align: right;
+    display: inline-block;
+    width: 47%;
+    right: 0px;
+    height: 100%;
+    
+}
+
+.info_line{
+    width:100%;
+    height: 10%;
+}
+
+#atk_lable{
+    color: dodgerblue;
 }
 
 #atk_val{
     color: white;
-    display: inline-block;
-    text-align: right;
-    width: 40%;
-    right: 0px;
 }
 
-#ele{
-    width: 100%;
-    height: 17px;
-}
 
 #ele_lable{
-    display: inline-block;
     color: dodgerblue;
-    width: 40%;
-    left: 0px;
 }
 
 #ele_val{
     color: white;
-    display: inline-block;
-    text-align: right;
-    width: 40%;
-    right: 0px;
+}
+
+.sharp_lable{
+    color: dodgerblue;
+    width: 95%;
+    height: 10%;
 }
 
 #sharp{
-    color: dodgerblue;
-    width: 95%;
-    height: 17px;
     border-top: 2px solid;
     border-top-color: chocolate;
 }
 
-#sharp_img_cont{
-    width:95%;
-    height:17px;
-    
-}
-
-#sharp_img{
-    height:auto;
-    width: 95%;
-    border: solid;
-    border-color: gainsboro;
-}
-
-#sharp_p{
-    color: dodgerblue;
-    width: 95%;
-    height: 17px;
-
-}
-
 #sharp_p_img_cont{
-    width:95%;
-    height:17px;
     border-bottom: 2px solid;
     border-bottom-color: chocolate;
 }
 
-#sharp_p_img{
-    height:auto;
-    width: 95%;
-    border: solid;
-    border-color: gainsboro;
+.sharp_img_cont{
+    width:95%;
+    height:10%;
 }
 
-#slot{
-    height:15px;
-    width:100%;
+.sharp_img{
+    height:auto;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border: 1px solid;
+    border-color: gainsboro;
 }
 
 #slot_lable{
     color: dodgerblue;
-    display: inline-block;
-    width:40%;
-    left:0px;
 }
 
 #slot_val{
     color: white;
-    text-align: right;
-    display: inline-block;
-    width: 40%;
-    right: 0px;
 }
-
-#aff{
-    height:15px;
-    width:100%;
-}
-
 #aff_lable{
     color: dodgerblue;
-    text-align: left;
-    display: inline-block;
-    width: 40%;
-    left: 0px;
 }
 
 #aff_val{
     color: white;
-    text-align: right;
-    display: inline-block;
-    width: 40%;
-    right: 0px;
 }
 
 #weap_type{
-    position: absolute;
-    bottom: 2px;
-    height: 17px;
-    width: 95%;
     border-top: 2px solid;
     border-top-color: chocolate;
+    width: 95%;
 }
 
 #weap_type_lable{
-    
     color: dodgerblue;
     text-align: left;
     display: inline-block;
-    width: 40%;
-    left: 0px;
+    width: 20%;
+    right: 0px;
+    height: 100%;
 }
 
 #weap_type_val{
     color: white;
     text-align: right;
     display: inline-block;
-    width: 40%;
-    right: 0px;
-}
-
-#page_2{
-    position: absolute;
-    visibility: hidden;
-    cursor: pointer;
+    width: 73%;
+    left: 0px;
     height: 100%;
-    width: 50%;
-    left:0px;
-    right:0px;
-    background: black;
 }
 
 #flavour{
     color: white;
     overflow: auto;
-    width: 100%;
-    height: 150px;
 }
 
-#page_3{
-    position: absolute;
-    visibility: hidden;
-    cursor: pointer;
+.text_cont{
     height: 100%;
-    width: 50%;
-    left:0px;
-    right:0px;
-    background: black;
-}
-
-#upgrade{
-    border-bottom: 2px solid;
-    border-bottom-color: chocolate;
-}
-
-.mat_panel{
-    height: 80px;
-    width: 95%;
-
-}
-
-#craft{
-    height: 80px;
-    width: 95%;
-}
-
-.lable{
-    color: dodgerblue;
-    text-align: left;
-    display: inline-block;
-    width: 40%;
-    right: 0px;
-    height: 15px;
-}
-
-.value{
-    color: white;
-    text-align: right;
-    display: inline-block;
-    width: 40%;
-    left: 0px;
-    height: 15px;
-    
+    width: 100%;
 }
 
 .cat_lable{
     color: white;
-    font-size: 6pt;
+    font-size: 100%;
     width: 100%;
-    height: 5px;
+    height: 10%;
+}
+
+.cost_lable{
+    color: yellow;
+    text-align: left;
+    display: inline-block;
+    width: 20%;
+    left: 0px;
+    height: 100%;
+    
+}
+
+.cost_value{
+    color: white;
+    text-align: right;
+    display: inline-block;
+    width: 73%;
+    right: 0px;
+    height: 100%;
 }
 
 
 #info_img{
     position: absolute;
     top: 0px;
-    left: 150px;
+    right: 0px;
     width: 50%;
     height: 100%;
+    transition: 500ms;
 }
 
 #lg_img{

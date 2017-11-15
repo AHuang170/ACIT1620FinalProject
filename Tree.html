@@ -13,87 +13,117 @@
                 <div id="info_img">
                     <img id="lg_img" src="Img/Weap/placeholder.png">
                 </div>
-                <div id="page_1" onclick = "toggle_page(1)">
-                    <div id="p1_name">Name</div>
-                    <div id="p1_rare">Rarity</div>
-                    <div id="atk">
-                        <div id="atk_lable">Attack</div>
-                        <div id="atk_val">1200</div>
+                
+                <div id="header">
+                    <div id="info_name" class="name">Name</div>
+                    <div id="info_rare" class="rare">Rarity</div>
+                </div>
+                
+                <div id="page_1" class="info_page" onclick = "toggle_page(1)">
+                    
+                    <div class = "info_line">
+                        <div id="atk_lable" class = "lable">Attack</div>
+                        <div id="atk_val" class = "value">1200</div>
                     </div>
                     
-                    <div id="ele">
-                        <div id="ele_lable">Thunder</div>
-                        <div id="ele_val">630</div>
+                    <div class = "info_line">
+                        <div id="ele_lable" class = "lable">Thunder</div>
+                        <div id="ele_val" class = "value">630</div>
                     </div>
                     
-                    <div id="sharp">Sharpness</div>
-                    <div id="sharp_img_cont">
-                        <img id="sharp_img" src="Img/Weap/Sharp/placeholder.png">
+                    <div id="sharp" class = "sharp_lable">Sharpness</div>
+                    <div id="sharp_img_cont" class = "sharp_img_cont">
+                        <img id="sharp_img" class = "sharp_img" src="Img/Weap/Sharp/placeholder.png">
                     </div>
                     
-                    <div id="sharp_p">Sharpness + 1</div>
-                    <div id="sharp_p_img_cont">
-                        <img id="sharp_p_img" src="Img/Weap/Sharp/placeholder_plus.png">
+                    <div id="sharp_p" class = "sharp_lable">Sharpness + 1</div>
+                    <div id="sharp_p_img_cont" class = "sharp_img_cont">
+                        <img id="sharp_p_img" class = "sharp_img" src="Img/Weap/Sharp/placeholder_plus.png">
                     </div>
                     
-                    <div id="slot">
-                        <div id="slot_lable">Slots</div>
-                        <div id="slot_val">3</div>
+                    <div class = "info_line">
+                        <div id="slot_lable" class= "lable">Slots</div>
+                        <div id="slot_val" class = "value" >3</div>
                     </div>
                     
-                    <div id="aff">
-                        <div id="aff_lable">Affinity</div>
-                        <div id="aff_val">0%</div>
+                    <div class = "info_line">
+                        <div id="aff_lable" class = "lable">Affinity</div>
+                        <div id="aff_val" class = "value">0%</div>
                     </div>
                     
-                    <div id="weap_type">
+                    <div id="weap_type" class = "info_line">
                         <div id="weap_type_lable">Type</div>
                         <div id="weap_type_val">Blademaster</div>
                     </div>
                 </div>
                 
-                <div id="page_2" onclick = "toggle_page(2)">
-                    <div id="p1_name">Name</div>
-                    <div id="p1_rare">Rarity</div>
-                    <div id="flavour">...Flavour Text... It's an amazing weap ya know just make it</div>
+                <div id="page_2" class="info_page" onclick = "toggle_page(2)">
+                    <div id="flavour" class = "text_cont">...Flavour Text... It's an amazing weap ya know just make it</div>
                 </div>
                     
                 
-                <div id="page_3" onclick = "toggle_page(3)">
-                    <div id="p1_name">Name</div>
-                    <div id="p1_rare">Rarity</div>
+                <div id="page_3" class="info_page" onclick = "toggle_page(3)">
                     
-                    <div id="upgrade" class="mat_panel">
-                        <div id="up_cat" class="cat_lable">UPGRADE</div>
+                    
+                    <div id="up_cat" class="cat_lable">UPGRADE</div>
                         
+                    <div class = "info_line">
                         <div id="up_mat1" class = "lable"></div>
                         <div id="up_mat1_amt" class = "value"></div>
-                        
+                    </div>
+                    
+                    <div class = "info_line">
                         <div id="up_mat2" class = "lable"></div>
                         <div id="up_mat2_amt" class = "value"></div>
-                        
+                    </div>
+                    
+                    <div class = "info_line">
                         <div id="up_mat3" class = "lable"></div>
                         <div id="up_mat3_amt" class = "value"></div>
-                        
+                    </div>
+                    
+                    <div class = "info_line">
                         <div id="up_mat4" class = "lable"></div>
                         <div id="up_mat4_amt" class = "value"></div>
                     </div>
                     
-                    <div id="craft" class="mat_panel">
-                        <div id="up_cat" class="cat_lable">CRAFT</div>
-                        
+                    <div class = "info_line">
+                        <div class = "cost_lable">Cost</div>
+                        <div id="up_cost" class = "cost_value">0000000000z</div>
+                    </div>
+                    
+                </div>
+                
+                <div id="page_4" class="info_page" onclick = "toggle_page(4)">
+                    
+
+                    <div id="up_cat" class="cat_lable">CRAFT</div>
+                    
+                    <div class = "info_line">
                         <div id="cr_mat1" class = "lable"></div>
                         <div id="cr_mat1_amt" class = "value"></div>
+                    </div>
                         
+                    <div class = "info_line">
                         <div id="cr_mat2" class = "lable"></div>
                         <div id="cr_mat2_amt" class = "value"></div>
+                    </div>
                         
+                    <div class = "info_line">
                         <div id="cr_mat3" class = "lable"></div>
                         <div id="cr_mat3_amt" class = "value"></div>
+                    </div>
                         
+                    <div class = "info_line">
                         <div id="cr_mat4" class = "lable"></div>
                         <div id="cr_mat4_amt" class = "value"></div>
                     </div>
+                    
+                    <div class = "info_line">
+                        <div class = "cost_lable">Cost</div>
+                        <div id="cr_cost" class = "cost_value">0000000000z</div>
+                    </div>
+
                 </div>
                 
             </div>
@@ -101,11 +131,12 @@
         
         <div id="control">
             <select id="tree_selection">
-                <option selected="selected">Select an Option</option>
-                <option value="Empty">Empty</option>
+                
+                <option value="Empty">Select an Option</option>
                 <option value="Tree1">Tree 1</option>
             </select>
             <button id="gen_button">Generate</button>
+            <button id="del_button">Delete</button>
         </div>
         
         <script src="sitejs.js"></script>
