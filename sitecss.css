@@ -23,8 +23,8 @@
     border: 5px groove;
     border-color: bisque;
     margin: auto;
-    width: 300px;
-    height: 200px;
+    width: 400px;
+    height: 210px;
     top: -200px;
     left: 0px;
     background-color: black;
@@ -61,7 +61,7 @@
     position: absolute;
     display: block;
     background-color: black;
-    width: 50%;
+    width: 40%;
     height: 17%;
     left: 0px;
     top: 0px;
@@ -93,7 +93,7 @@
     display: block;
     cursor: pointer;
     height: 82%;
-    width: 50%;
+    width: 40%;
     left:0px;
     bottom: 0px;
     background: black;
@@ -107,6 +107,7 @@
     left: 0px;
     height: 100%;
     color: dodgerblue;
+    vertical-align: top;
 }
 
 .value{
@@ -116,6 +117,7 @@
     right: 0px;
     height: 100%;
     color: white;
+    vertical-align: top;
     
 }
 
@@ -258,6 +260,37 @@
     height: 10%;
 }
 
+#parent_lable{
+    text-align: left;
+    color: white;
+}
+
+#parent_name{
+    text-align: center;
+    color: white;
+}
+
+.mat_lable{
+    text-align: left;
+    display: inline-block;
+    width: 86%;
+    left: 0px;
+    height: 100%;
+    color: dodgerblue;
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.mat_value{
+    text-align: right;
+    display: inline-block;
+    width: 9%;
+    right: 0px;
+    height: 100%;
+    color: white;
+    vertical-align: top;
+}
+
 .cost_lable{
     color: yellow;
     text-align: left;
@@ -282,7 +315,7 @@
     position: absolute;
     top: 0px;
     right: 0px;
-    width: 50%;
+    width: 60%;
     height: 100%;
     transition: 500ms;
     
