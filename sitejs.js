@@ -72,7 +72,7 @@ function disp_Node(x, y, parent_id, tree_arr){
     //nDiv.style.color = update_rare_color(tree_arr[y][x].rarity);
     nTitle.style.color = update_rare_color(tree_arr[y][x].rarity);
     //nDiv.style.textShadow = "1px 0px rgba(156,154,160,0.5)";
-    nTitle.style.textShadow = "0px 1px grey";
+    //nTitle.style.textShadow = "0px 1px grey";
     nDiv.onclick = function(){
         if(selected_node == -1){
             selected_node = nDiv.id;
@@ -145,8 +145,20 @@ function disp_Tree(tree_arr){
     
     width *= 100;
     
-    nDiv.style.height = (height) + 50+'px';
+    nDiv.style.height = (height + 50)+'px';
     nDiv.style.width = (width + 50)+'px';
+    
+    var r_limit = document.createElement('div');
+    var b_limit = document.createElement('div');
+    
+    r_limit.id = "right_limit";
+    b_limit.id = "bottom_limit";
+    
+    r_limit.style.right = "-600px";
+    b_limit.style.bottom = "-100px";
+    
+    nDiv.appendChild(r_limit);
+    nDiv.appendChild(b_limit);
     
     document.getElementById("content").appendChild(nDiv);
     
@@ -253,8 +265,12 @@ function disp_info_box(x, y, tree_arr){
     document.getElementById("info_box").style.opacity = 1;
     document.getElementById("page_1").style.visibility = "visible";
     document.getElementById("page_1").style.opacity = 1;
-        
-
+    
+    var new_y = document.getElementById("info_box").offsetTop;
+    var new_x = document.getElementById("info_box").offsetleft;
+    
+    
+    
     info_box_present = true;
     update_info_box(tree_arr[y][x]);
 }

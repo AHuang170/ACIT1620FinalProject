@@ -59,6 +59,22 @@
     
 }
 
+#right_limit{
+    position: absolute;
+    top: 0px;
+    height: 10px;
+    width: 1px;
+    background-color: rgba(0,0,0,0);
+}
+
+#bottom_limit{
+    position: absolute;
+    left: 0px;
+    width: 10px;
+    height: 1px;
+    background-color: rgba(0,0,0,0);
+}
+
 /* ------------------------------------------------------ Info box styles ------------------------------------------------------ */
 #info_box{
     z-index: 20;
