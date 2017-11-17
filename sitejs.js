@@ -72,7 +72,7 @@ function disp_Node(x, y, parent_id, tree_arr){
     //nDiv.style.color = update_rare_color(tree_arr[y][x].rarity);
     nTitle.style.color = update_rare_color(tree_arr[y][x].rarity);
     //nDiv.style.textShadow = "1px 0px rgba(156,154,160,0.5)";
-    nTitle.style.textShadow = "0px 1px white";
+    nTitle.style.textShadow = "0px 1px grey";
     nDiv.onclick = function(){
         if(selected_node == -1){
             selected_node = nDiv.id;
