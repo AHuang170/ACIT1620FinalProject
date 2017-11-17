@@ -61,7 +61,7 @@
 
 /* ------------------------------------------------------ Info box styles ------------------------------------------------------ */
 #info_box{
-    z-index: 20
+    z-index: 20;
     position: absolute;
     box-sizing: content-box;
     border: 5px groove;

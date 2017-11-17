@@ -246,7 +246,7 @@ function disp_info_box(x, y, tree_arr){
         remove_info_box();
     }
 
-        
+    
     document.getElementById("info_box").style.top = (y* 100 + 20)+'px';
     document.getElementById("info_box").style.left = (x*100 +102)+'px';
     document.getElementById("info_box").style.visibility = "visible";
