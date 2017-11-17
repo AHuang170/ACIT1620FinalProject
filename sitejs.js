@@ -46,6 +46,15 @@ function disp_Node(x, y, parent_id, tree_arr){
     var nImg = document.createElement('img');
     var new_id = node_num;
     
+    var nTitle = document.createElement('div');
+    nTitle.style.height = '50%';
+    nTitle.style.width = '100%';
+    nTitle.style.overflow = 'auto'
+    nTitle.style.position = "absolute";
+    nTitle.style.top = '0px';
+    nTitle.style.left = '0px';
+    nTitle.style.zIndex = '2';
+    
     nDiv.id = new_id*10;
     
     nDiv.className = 'panel';
@@ -55,12 +64,15 @@ function disp_Node(x, y, parent_id, tree_arr){
     
     nDiv.style.top = (y*100)+'px';
     nDiv.style.left = (x*100 + 1)+'px';
-    
+   
     nDiv.style.borderColor = "dimgray";
     
-    nDiv.innerHTML = tree_arr[y][x].name;
-    nDiv.style.color = update_rare_color(tree_arr[y][x].rarity);
-    nDiv.style.textShadow = "1px 0px rgba(156,154,160,0.5)";
+    //nDiv.innerHTML = tree_arr[y][x].name;
+    nTitle.innerHTML = tree_arr[y][x].name;
+    //nDiv.style.color = update_rare_color(tree_arr[y][x].rarity);
+    nTitle.style.color = update_rare_color(tree_arr[y][x].rarity);
+    //nDiv.style.textShadow = "1px 0px rgba(156,154,160,0.5)";
+    nTitle.style.textShadow = "0px 1px white";
     nDiv.onclick = function(){
         if(selected_node == -1){
             selected_node = nDiv.id;
@@ -82,6 +94,8 @@ function disp_Node(x, y, parent_id, tree_arr){
         }
         
     };
+    
+    nDiv.appendChild(nTitle);
     
     nDiv.appendChild(nImg);
     document.getElementById(parent_id).appendChild(nDiv);
