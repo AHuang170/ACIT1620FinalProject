@@ -1,5 +1,5 @@
 var gs_Iron_Sword_Path = [
-    [{type: 'node', name:'Iron Sword', rarity: 1, attack: 288, ele_type: "No Element", ele_val: "", num_slot : "---", affinity: "0%", flavour:"A weapon that even novice hunters can use. Charge up for a more powerful slash.", upgrade:["10z", "C. Qurupecco Scale", "55"], craft:["750z", "Iron Ore", "3"], shop: "1500z", sharp:"Img/Weap/gs/Iron_Sword/base_sharp.png", p_sharp:"Img/Weap/gs/Iron_Sword/plus_sharp.png", pic:'Img/Weap/gs/Iron_Sword/render.png', parent:["Shovel", 0, -1], playstyle: "Blademaster", extra: ""}]
+    [{type: 'node', name:'Iron Sword', rarity: 1, attack: 288, ele_type: "No Element", ele_val: "", num_slot : "---", affinity: "0%", flavour:"A weapon that even novice hunters can use. Charge up for a more powerful slash.", upgrade:[], craft:["750z", "Iron Ore", "3"], shop: "1500z", sharp:"Img/Weap/gs/Iron_Sword/base_sharp.png", p_sharp:"Img/Weap/gs/Iron_Sword/plus_sharp.png", pic:'Img/Weap/gs/Iron_Sword/render.png', parent:[], playstyle: "Blademaster", extra: ""}]
 ]
 
 var gs_trees = ["Iron_Sword_Path"];
@@ -247,6 +247,7 @@ function update_info_box(node_object){
     
     if (node_object.upgrade.length != 0){
         document.getElementById("parent_lable").innerHTML = "Material List";
+        document.getElementById("up_cost_lable").innerHTML = "Cost"
         document.getElementById("parent_name").innerHTML = node_object.parent[0];
         document.getElementById("up_cost").innerHTML = node_object.upgrade[0];
         for(var i = 1; i < node_object.upgrade.length; i+=2){
@@ -262,11 +263,15 @@ function update_info_box(node_object){
         }
     }
     else{
-        docoument.getElementById("parent_name").innerHTML = "";
-        docoument.getElementById("parent_lable").innerHTML = "";
+        document.getElementById("parent_name").innerHTML = "Nothing";
+        document.getElementById("parent_lable").innerHTML = "";
+        document.getElementById("up_cost_lable").innerHTML = '';
+        document.getElementById("up_cost").innerHTML = '';
     }
     
     if (node_object.craft.length != 0){
+        document.getElementById("cr_cost_lable").innerHTML = "Cost";
+        document.getElementById("cr_cat").innerHTML = "Crafting Materials";
         document.getElementById("cr_cost").innerHTML = node_object.craft[0];
         for(var x = 1; x < node_object.craft.length; x+=2){
             var cr_mat_name = node_object.craft[x];
@@ -282,6 +287,11 @@ function update_info_box(node_object){
             document.getElementById(cr_val_id).innerHTML = cr_mat_amt;
             
         }
+    }
+    else{
+        document.getElementById("cr_cost_lable").innerHTML = "";
+        document.getElementById("cr_cost").innerHTML = "";
+        document.getElementById("cr_cat").innerHTML = "Cannot be Crafted";
     }
     
     document.getElementById("shop_price").innerHTML = node_object.shop;
