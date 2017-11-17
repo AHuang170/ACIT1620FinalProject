@@ -8,10 +8,54 @@
     background-size:cover;
 }
 
+#tree_header{
+    position: fixed;
+    top: 20px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    transition: 400ms;
+    width: 300px;
+    height: 50px;
+    visibility: hidden;
+    background-image: url(Img/header.jpg);
+    opacity: 0;
+    cursor: pointer;
+    border: 3px groove;
+    border-color: slategrey;
+    
+}
+
+#tree_header_top{
+    width: 100%;
+    height: 48%;
+    position: absolute;
+    text-align: center;
+    text-shadow: 2px 2px black;
+    top: 0px;
+    left: 0px;
+    color: whitesmoke;
+    font-weight: bold;
+    transition: 400ms;
+}
+
+#tree_header_bot{
+    width: 100%;
+    height: 48%;
+    position: absolute;
+    text-align: center;
+    text-shadow: 2px 2px white;
+    bottom: 0px;
+    left: 0px;
+    color: black;
+    font-weight: bold;
+    transition: 400ms;
+}
+
 #content{
     position:absolute;
-    top: 50px;
-    left: 400px;
+    top: 100px;
+    left: 25vw;
     
 }
 
@@ -80,7 +124,7 @@
     position: absolute;
     text-align: left;
     height: 50%;
-    width: 95%;
+    width: 100%;
     bottom: 0px;
     left: 0px;
     border-bottom-style: solid;
@@ -159,7 +203,7 @@
 
 .sharp_lable{
     color: dodgerblue;
-    width: 95%;
+    width: 100%;
     height: 10%;
 }
 
@@ -175,12 +219,12 @@
 }
 
 .sharp_img_cont{
-    width:95%;
+    width:100%;
     height:10%;
 }
 
 .sharp_img{
-    height:auto;
+    height:50%;
     width: 95%;
     margin-left: auto;
     margin-right: auto;
@@ -208,7 +252,7 @@
     position: absolute;
     border-top: 2px solid;
     border-top-color: chocolate;
-    width: 95%;
+    width: 100%;
     bottom: 5px;
     left: 0px;
     
@@ -250,7 +294,7 @@
     bottom: 0px;
     left: 0px;
     height: 80%;
-    width: 95%;
+    width: 100%;
 }
 
 .cat_lable{
@@ -268,6 +312,8 @@
 #parent_name{
     text-align: center;
     color: white;
+    border-top: 1px groove chocolate;
+    border-bottom: 1px groove chocolate;
 }
 
 .mat_lable{
@@ -372,7 +418,7 @@
     position: absolute;
     bottom: 0px;
     left:0px;
-    height:80px;
+    height:75px;
     width:100%;
 }
 

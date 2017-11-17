@@ -1,6 +1,20 @@
 var gs_Iron_Sword_Path = [
-    [{type: 'node', name:'Iron Sword', rarity: 1, attack: 288, ele_type: "No Element", ele_val: "", num_slot : "---", affinity: "0%", flavour:"A weapon that even novice hunters can use. Charge up for a more powerful slash.", upgrade:[], craft:["750z", "Iron Ore", "3"], shop: "1500z", sharp:"Img/Weap/gs/Iron_Sword/base_sharp.png", p_sharp:"Img/Weap/gs/Iron_Sword/plus_sharp.png", pic:'Img/Weap/gs/Iron_Sword/render.png', parent:[], playstyle: "Blademaster", extra: ""}]
+    [{type: 'node', name:'Iron Sword', rarity: 1, attack: 288, ele_type: "No Element", ele_val: "", num_slot : "---", affinity: "0%", flavour:"A weapon that even novice hunters can use. Charge up for a more powerful slash.", upgrade:[], craft:["750z", "Iron Ore", 3], shop: "1500z", sharp:"Img/Weap/gs/Iron_Sword/base_sharp.png", p_sharp:"Img/Weap/gs/Iron_Sword/plus_sharp.png", pic:'Img/Weap/gs/Iron_Sword/render.png', parent:[], playstyle: "Blademaster", extra: ""}],
+    [{type: 'connector', pic: "Img/connector_5.png"}],
+    [{type: 'node', name: 'Iron Sword+', rarity: 1, attack: 336, ele_type: "No Element", ele_val: "", num_slot: "---", affinity: "0%", flavour: "A weapon that even novice hunters can use. Charge up for a more powerful slash.", upgrade: ["650z", "Iron Ore", 5], craft: [], shop: "N/A", sharp: "Img/Weap/gs/Iron_Sword+/base_sharp.png", p_sharp: "Img/Weap/gs/Iron_Sword+/plus_sharp.png", pic: "Img/Weap/gs/Iron_Sword+/render.png", parent: ["Iron Sword", 0, 0], playstyle: "Blademaster", extra: ""}],
+    [{type: "connector", pic: "Img/connector_2.png"}, {type: "connector", pic: "Img/connector_3.png"}, {type: "connector", pic: "Img/connector_3.png"}, {type: "connector", pic: "Img/connector_3.png"}, {type: "connector", pic: "Img/connector_3.png"}, {type: "connector", pic: "Img/connector_4.png"}],
+    [{type: 'node', name: 'Buster Sword', rarity: 1, attack: 384, ele_type: "No Element", ele_val: "", num_slot: "---", affinity: "0%", flavour: "A strong blade made from high-purity iron. A popular choice among hunters.", upgrade: ["850z", "Machalite Ore", 2, "Iron Ore", 8], craft: [], shop: "N/A", sharp:"Img/Weap/gs/Buster_Sword/base_sharp.png", p_sharp: "Img/Weap/gs/Buster_Sword/plus_sharp.png", pic: "Img/Weap/gs/Buster_Sword/render.png", parent: ["Iron Sword+", 0, 2], playstyle: "Blademaster", extra: ""}, {type: "blank"}, {type: "blank"}, {type: "blank"}, {type: "blank"}, 
+    {type: "node", name: "Rugged Great Sword", rarity: 1, attack: 480, ele_type: "No Element", ele_val: "", num_slot: "---", affinity: "0%", flavour: "A blade made of the Jaggi's colorful hide. Standard gear for hunters in some regions.", upgrade: ["1400z", "G. Jaggi Claw", 4, "Jaggi Hide", 8, "Machalite Ore", 3], craft: ["2100z", "G. Jaggi Claw", 6, "G. Jaggi Hide", 3, "Machalite Ore", 6], shop: "N/A", sharp: "Img/Weap/gs/Rugged_Great_Sword/base_sharp.png", p_sharp: "Img/Weap/gs/Rugged_Great_Sword/plus_sharp.png", pic: "Img/Weap/gs/Rugged_Great_Sword/render.png", parent: ["Iron Sword+", 0, 2], playstyle: "Blademaster", extra: ""}],
+    [{type: "connector", pic: "Img/connector_2.png"}, {type: "connector", pic: "Img/connector_3.png"}, {type: "connector", pic: "Img/connector_3.png"}, {type: "connector", pic: "Img/connector_4.png"}, {type: "blank"}, {type: "connector", pic: "Img/connector_2.png"}, {type: "connector", pic: "Img/connector_3.png"}, {type: "connector", pic: "Img/connector_3.png"}, {type: "connector", pic: "Img/connector_3.png"}, {type: "connector", pic: "Img/connector_4.png"}],
+    [{type: 'node', name: 'Buster Sword+', rarity: 2, attack: 480, ele_type: 'No Element', ele_val: '', num_slot: '---', affinity: '0%', flavour: 'A strong blade made from high-purity iron. A popular choice among hunters.', upgrade: ["1400z", "Machalite Ore", 5, "Earth Crystal", 2, "Iron Ore", 5], craft: [], shop: 'N/A', sharp: 'Img/Weap/gs/Buster_Sword+/base_sharp.png', p_sharp: 'Img/Weap/gs/Buster_Sword+/plus_sharp.png', pic: 'Img/Weap/gs/Buster_Sword+/render.png', parent: ["Buster Sword", 0, 4], playstyle: 'Blademaster', extra: ''}, {type: 'blank'}, {type: 'blank'},
+    {type: 'node', name: 'Santoku Reaver', rarity: 2, attack: 624, ele_type: 'No Element', ele_val: '', num_slot: '---', affinity: '-10%', flavour: 'A blade made of sharpened Tetsucabra shell. The whorls on the blade affect value.', upgrade: ["2150z", "Tetsucabra Claw", "2", "Tetsucabra Shell", "2", "Machalite Ore", "2"], craft: ["3225z", "Tetsucabra Claw", "3", "Tetsucabra Shell", "3", "Tetsucabra Tusks", "2", "Machalite Ore", "5"], shop: 'N/A', sharp: 'Img/Weap/gs/Santoku_Reaver/base_sharp.png', p_sharp: 'Img/Weap/gs/Santoku_Reaver/plus_sharp.png', pic: 'Img/Weap/gs/Santoku_Reaver/render.png', parent: ["Buster Sword", 0, 4], playstyle: 'Blademaster', extra: ''}, {type: 'blank'},
+    {type: 'node', name: "Chieftain's Great Sword", rarity: 2, attack: 528, ele_type: 'No Element', ele_val: '', num_slot: '---', affinity: '0%', flavour: "A blade made of the Jaggi's colorful hide. Standard gear for hunters in some regions.", upgrade: ["1400z", "King's Frill", "4", "G. Jaggi Hide", "5", "Kecha Pelt", "5"], craft: [], shop: 'N/A', sharp: "Img/Weap/gs/Chieftain's_Great_Sword/base_sharp.png", p_sharp: "Img/Weap/gs/Chieftain's_Great_Sword/plus_sharp.png", pic: "Img/Weap/gs/Chieftain's_Great_Sword/render.png", parent: ["Rugged Great Sword", 5, 4], playstyle: 'Blademaster', extra: ''}, {type: 'blank'}, {type: 'blank'}, {type: 'blank'},
+    {type: 'node', name: "Ludroth Bone Sword", rarity: 2, attack: 480, ele_type: 'Water', ele_val: '230', num_slot: '---', affinity: '0%', flavour: "A blade reinforced with Ludroth parts. A good base level for further upgrading", upgrade: ["1750z", "Spongy Hide", "1", "Monster Fluid", "2", "Monster Bone S", "3"], craft: ["2625z", "Royal Ludroth Claw", "2", "Spongy Hide", "2", "Monster Fluid", "2", "Monster Bone M", "2"], shop: 'N/A', sharp: "Img/Weap/gs/Ludroth_Bone_Sword/base_sharp.png", p_sharp: "Img/Weap/gs/Ludroth_Bone_Sword/plus_sharp.png", pic: "Img/Weap/gs/Ludroth_Bone_Sword/render.png", parent: ["Rugged Great Sword", 5, 4], playstyle: 'Blademaster', extra: ''}]
 ]
+
+//{type: 'node', name: "", rarity: , attack: , ele_type: '', ele_val: '', num_slot: '', affinity: '', flavour: "", upgrade: [], craft: [], shop: '', sharp: "", p_sharp: "", pic: "", parent: [], playstyle: '', extra: ''}
+//{type: 'connector', pic: 'Img/connector_.png'}
+//{type: 'blank'}
 
 var gs_trees = ["Iron_Sword_Path"];
 var ls_trees = [];
@@ -19,7 +33,10 @@ var bow_trees = [];
 
 var node_num = 0;
 var selected_node = -1;
+var curr_selected_tree = [];
 var info_box_present = false;
+
+var selected_gear = '';
 
 var weap_toggle = 0;
 var arm_toggle = 0;
@@ -42,7 +59,8 @@ function disp_Node(x, y, parent_id, tree_arr){
     nDiv.style.borderColor = "dimgray";
     
     nDiv.innerHTML = tree_arr[y][x].name;
-    
+    nDiv.style.color = update_rare_color(tree_arr[y][x].rarity);
+    nDiv.style.textShadow = "1px 0px rgba(156,154,160,0.5)";
     nDiv.onclick = function(){
         if(selected_node == -1){
             selected_node = nDiv.id;
@@ -157,7 +175,6 @@ function delete_tree(){
         remove_info_box();
 
     }
-    
 }
 
 function toggle_page(page_num){
@@ -226,11 +243,28 @@ function disp_info_box(x, y, tree_arr){
 
     info_box_present = true;
     update_info_box(tree_arr[y][x]);
-    
+}
+
+function clear_material_info(){
+    for(var i = 1; i < 5; i++){
+            
+        var up_clr_lable = "up_mat"+i;
+        var up_clr_val = "up_mat"+i+"_amt";
+        var cr_clr_lable = "cr_mat"+i;
+        var cr_clr_val = "cr_mat"+i+"_amt";
+            
+        document.getElementById(up_clr_lable).innerHTML = "";
+        document.getElementById(up_clr_val).innerHTML = "";
+        document.getElementById(cr_clr_lable).innerHTML = "";
+        document.getElementById(cr_clr_val).innerHTML = "";
+            
+    }
 }
 
 function update_info_box(node_object){
+    clear_material_info();
     document.getElementById("info_name").innerHTML = node_object.name;
+    document.getElementById("info_name").style.color = update_rare_color(node_object.rarity);
     document.getElementById("info_rare").innerHTML = "Rarity " + node_object.rarity;
     document.getElementById("info_rare").style.color = update_rare_color(node_object.rarity);
     document.getElementById("atk_val").innerHTML = node_object.attack;
@@ -249,16 +283,20 @@ function update_info_box(node_object){
         document.getElementById("parent_lable").innerHTML = "Material List";
         document.getElementById("up_cost_lable").innerHTML = "Cost"
         document.getElementById("parent_name").innerHTML = node_object.parent[0];
+        document.getElementById("parent_name").style.borderTopStyle = "groove";
+        document.getElementById("parent_name").style.borderBottomStyle = "groove";
         document.getElementById("up_cost").innerHTML = node_object.upgrade[0];
+        var up_count = 1;
         for(var i = 1; i < node_object.upgrade.length; i+=2){
             var mat_name = node_object.upgrade[i];
             var mat_amt = node_object.upgrade[i+1];
             
-            var up_lable_id = "up_mat"+i;
-            var up_val_id = "up_mat"+i+"_amt";
+            var up_lable_id = "up_mat"+up_count;
+            var up_val_id = "up_mat"+up_count+"_amt";
             
             document.getElementById(up_lable_id).innerHTML = mat_name;
             document.getElementById(up_val_id).innerHTML = mat_amt;
+            up_count++;
             
         }
     }
@@ -267,31 +305,34 @@ function update_info_box(node_object){
         document.getElementById("parent_lable").innerHTML = "";
         document.getElementById("up_cost_lable").innerHTML = '';
         document.getElementById("up_cost").innerHTML = '';
+        document.getElementById("parent_name").style.borderTopStyle = "groove";
+        document.getElementById("parent_name").style.borderBottomStyle = "groove";
+        
     }
     
     if (node_object.craft.length != 0){
         document.getElementById("cr_cost_lable").innerHTML = "Cost";
         document.getElementById("cr_cat").innerHTML = "Crafting Materials";
         document.getElementById("cr_cost").innerHTML = node_object.craft[0];
+        var cr_count = 1;
         for(var x = 1; x < node_object.craft.length; x+=2){
             var cr_mat_name = node_object.craft[x];
             var cr_mat_amt = node_object.craft[x+1];
             
-            var cr_lable_id = "cr_mat"+x;
-            var cr_val_id = "cr_mat"+x+"_amt";
-            
-            console.log(cr_lable_id);
-            console.log(cr_val_id);
+            var cr_lable_id = "cr_mat"+cr_count;
+            var cr_val_id = "cr_mat"+cr_count+"_amt";
+
             
             document.getElementById(cr_lable_id).innerHTML = cr_mat_name;
             document.getElementById(cr_val_id).innerHTML = cr_mat_amt;
-            
+            cr_count++;
         }
     }
     else{
         document.getElementById("cr_cost_lable").innerHTML = "";
         document.getElementById("cr_cost").innerHTML = "";
-        document.getElementById("cr_cat").innerHTML = "Cannot be Crafted";
+        document.getElementById("cr_cat").innerHTML = "Cannot be Created";
+
     }
     
     document.getElementById("shop_price").innerHTML = node_object.shop;
@@ -308,7 +349,7 @@ function update_rare_color(rare){
             break;
             
         case 2:
-            color = "plum";
+            color = "rgb(140,58,165)";
             break;
             
         case 3:
@@ -383,9 +424,17 @@ function option_select (option){
 }
 
 function select_wpn_type(selection){
+    if(selection != selected_gear){
+        document.getElementById("tree_header_bot").innerHTML = '';
+        selected_gear = selection;
+        clear_list();
+        delete_tree();
+        
+    }
+    
+    update_header(selection);
+    
     var tree_arr_cat = eval(selection + "_trees");
-    clear_list();
-    delete_tree();
     for(var index = 0; index < tree_arr_cat.length; index++){
         var new_option = document.createElement("option");
         var new_op_text = tree_arr_cat[index];
@@ -454,11 +503,41 @@ function close_message(){
     document.getElementById("message_box").style.display = "none";
 }
 
+function display_tree_header(){
+    document.getElementById("tree_header").style.opacity = "1";
+    document.getElementById("tree_header").style.visibility = "visible";
+}
+
+function hide_header(){
+    document.getElementById("tree_header").style.opacity = "0";
+    document.getElementById("tree_header").style.visibility = "hidden";
+}
+
+function update_header(selection){
+    var wpn_class = document.getElementById(selection).innerHTML;
+    var display_string = wpn_class + " Tree";
+    document.getElementById("tree_header_top").innerHTML = display_string;
+    display_tree_header();
+}
+
+function update_header_body(path){
+    var stripped_str = path.slice(path.indexOf('_') + 1);
+    while(stripped_str.indexOf('_') != -1){
+        stripped_str = stripped_str.replace('_', ' ');
+    }
+    
+    document.getElementById("tree_header_bot").innerHTML = stripped_str;
+}
+
 document.getElementById('gen_button').addEventListener("click", function(){
     var selected_tree = document.getElementById("tree_selection").value;
     if (selected_tree != "Empty"){
         disp_Tree(eval(selected_tree));
+        display_tree_header();
+        update_header_body(selected_tree);
+        curr_selected_tree = eval(selected_tree);
     }
+    
     
 });
 
