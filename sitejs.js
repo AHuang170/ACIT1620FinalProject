@@ -55,8 +55,9 @@ function disp_Node(x, y, parent_id, tree_arr){
     nTitle.style.left = '0px';
     nTitle.style.zIndex = '2';
     
-    nDiv.id = new_id*10;
     
+    nDiv.id = new_id*10;
+    nTitle.id = nDiv.id+"_title";
     nDiv.className = 'panel';
     nImg.className = 'ImgPan';
     
@@ -123,17 +124,19 @@ function disp_Conn(x, y, parent_id, tree_arr){
 
 function disp_Tree(tree_arr){
     
+    
     delete_tree();
     
     var nDiv = document.createElement('div');
     nDiv.id = 'diagram';
     nDiv.style.position = 'absolute';
-    nDiv.style.top = '0px';
+    
     nDiv.style.left = '0px';
     nDiv.style.border = "1px outset";
     nDiv.style.backgroundImage = "url(Img/tree_back.jpg)";
     nDiv.style.backgroundSize = "cover";
-    
+    nDiv.style.transition = "300ms";
+    nDiv.className = "tree_diagram";
     
     var height = tree_arr.length * 100;
     var width = 0;
@@ -190,17 +193,18 @@ function delete_tree(){
     
     var content_div = document.getElementById("content");
     var tree_div = document.getElementById('diagram');
+    var dia_div = document.getElementById('diagram2');
     
+
     if(tree_div != null){
-        
-        content_div.removeChild(tree_div);
-        
-        
+
+        content_div.removeChild(tree_div);    
         node_num = 0;
         selected_node = -1;
         remove_info_box();
-
     }
+
+    
 }
 
 function toggle_page(page_num){
@@ -214,6 +218,8 @@ function toggle_page(page_num){
             document.getElementById("page_3").style.opacity = 0;
             document.getElementById("page_4").style.visibility = "hidden";
             document.getElementById("page_4").style.opacity = 0;
+            document.getElementById("get_cost").style.visibility = "hidden";
+            document.getElementById("get_cost").style.opacity = 0;
             break;
         
         case 2:
@@ -225,6 +231,8 @@ function toggle_page(page_num){
             document.getElementById("page_3").style.opacity = 1;
             document.getElementById("page_4").style.visibility = "hidden";
             document.getElementById("page_4").style.opacity = 0;
+            document.getElementById("get_cost").style.visibility = "visible";
+            document.getElementById("get_cost").style.opacity = 1;
             break;
             
         case 3:
@@ -236,6 +244,8 @@ function toggle_page(page_num){
             document.getElementById("page_3").style.opacity = 0;
             document.getElementById("page_4").style.visibility = "visible";
             document.getElementById("page_4").style.opacity = 1;
+            document.getElementById("get_cost").style.visibility = "visible";
+            document.getElementById("get_cost").style.opacity = 1;
             break;
             
         case 4:
@@ -247,6 +257,8 @@ function toggle_page(page_num){
             document.getElementById("page_3").style.opacity = 0;
             document.getElementById("page_4").style.visibility = "hidden";
             document.getElementById("page_4").style.opacity = 0;
+            document.getElementById("get_cost").style.visibility = "hidden";
+            document.getElementById("get_cost").style.opacity = 0;
             break;
     }
 }
@@ -430,6 +442,8 @@ function remove_info_box(){
     document.getElementById("page_3").style.opacity = 0;
     document.getElementById("page_4").style.visibility = "hidden";
     document.getElementById("page_4").style.opacity = 0;
+    document.getElementById("get_cost").style.visibility = "hidden";
+    document.getElementById("get_cost").style.opacity = 0;
     info_box_present = false;
 }
 
@@ -460,26 +474,28 @@ function select_wpn_type(selection){
         clear_list();
         delete_tree();
         
-    }
-    
-    update_header(selection);
-    
-    var tree_arr_cat = eval(selection + "_trees");
-    for(var index = 0; index < tree_arr_cat.length; index++){
-        var new_option = document.createElement("option");
-        var new_op_text = tree_arr_cat[index];
         
-        while( new_op_text.indexOf("_") != -1){
-            new_op_text = new_op_text.replace("_", " ");
+    
+        var tree_arr_cat = eval(selection + "_trees");
+        for(var index = 0; index < tree_arr_cat.length; index++){
+            var new_option = document.createElement("option");
+            var new_op_text = tree_arr_cat[index];
+
+            while( new_op_text.indexOf("_") != -1){
+                new_op_text = new_op_text.replace("_", " ");
+            }
+
+            var new_op_val = selection + "_" + tree_arr_cat[index];
+
+            new_option.innerHTML = new_op_text;
+            new_option.value = new_op_val;
+
+            document.getElementById("tree_selection").add(new_option);
         }
         
-        var new_op_val = selection + "_" + tree_arr_cat[index];
-        
-        new_option.innerHTML = new_op_text;
-        new_option.value = new_op_val;
-        
-        document.getElementById("tree_selection").add(new_option);
     }
+    update_header(selection);
+    
     
 }
 
@@ -559,6 +575,97 @@ function update_header_body(path){
     document.getElementById("tree_header_bot").innerHTML = stripped_str;
 }
 
+function calculate_cost(selected_node){
+    var curr_node = Object.assign({}, selected_node);
+    var shop_cost = selected_node.shop;
+    var craft_cost = selected_node.craft;
+    var upgrade_cost = [];
+    if(selected_node.upgrade.length > 0){
+        
+        var raw_info = upgrade_options(curr_node);
+        
+        upgrade_cost = raw_info.slice(1, raw_info.length);
+    }
+    var acquisition_options = [shop_cost, craft_cost, upgrade_cost];
+    return acquisition_options;
+}
+
+function add_dictionary(dict1, dict2){
+    var base = Object.assign({}, dict1);
+    var op = Object.assign({}, dict2);
+    
+    var base_key = Object.keys(base);
+    
+    var op_key = Object.keys(op);
+    
+    var result_dict = {};
+    
+    var interim_value = 0;
+    
+    for(var i = 0; i < op_key.length; i++){
+        
+        if(base_key.indexOf(op_key[i]) != -1){
+            interim_value = base[op_key[i]] + op[op_key[i]];
+            
+            base[op_key[i]] = interim_value;
+        }
+        else{
+            base[op_key[i]] = op[op_key[i]];
+        }
+    }
+    result_dict = Object.assign({}, base);
+    return result_dict;
+}
+
+function upgrade_options(curr_node){
+    //keep using arrays instead
+    var work_node = Object.assign({}, curr_node);
+    var result_arr = [];
+    var current_total = {};
+    var alt_total = {};
+    var next_parent = work_node.parent;
+    
+    curr_node = Object.assign({}, get_keyVal_pair(work_node.upgrade));
+    result_arr.push(curr_node);
+    
+    while(next_parent.length > 0){
+        work_node = Object.assign({}, curr_selected_tree[next_parent[2]][next_parent[1]]);
+        
+        
+        if(work_node.craft.length > 0){
+            alt_total = add_dictionary(result_arr[0], get_keyVal_pair(work_node.craft));
+            alt_total["Base"] = work_node.name;
+            alt_total["Mehtod"] = "Craft";
+            result_arr.push(alt_total);
+        }
+        
+        if(work_node.shop != "N/A"){
+            alt_total = Object.assign({}, result_arr[0]);
+            alt_total["Cost"] = alt_total["Cost"] + parseInt(work_node.shop);
+            alt_total["Base"] = work_node.name;
+            alt_total["Method"] = "Buy";
+            result_arr.push(alt_total);
+        }
+        
+        if(work_node.upgrade.length > 0){
+            current_total = add_dictionary(result_arr[0], get_keyVal_pair(work_node.upgrade));
+            result_arr[0] = Object.assign({}, current_total);
+        }
+     
+        next_parent = work_node.parent;
+    }
+    return result_arr;
+}
+
+function get_keyVal_pair(base_arr){
+    var result_dict = {};
+    result_dict["Cost"] = parseInt(base_arr[0]);
+    for(var i = 1; i < base_arr.length; i+=2){
+        result_dict[base_arr[i]] = parseInt(base_arr[i+1]);
+    }
+    return result_dict;
+}
+
 document.getElementById('gen_button').addEventListener("click", function(){
     var selected_tree = document.getElementById("tree_selection").value;
     if (selected_tree != "Empty"){
@@ -567,7 +674,6 @@ document.getElementById('gen_button').addEventListener("click", function(){
         update_header_body(selected_tree);
         curr_selected_tree = eval(selected_tree);
     }
-    
     
 });
 
@@ -660,7 +766,22 @@ document.getElementById("op_armor").addEventListener("click", function(){
         
         arm_toggle = 0;
     }
-    
-    
 
+});
+
+document.getElementById("get_cost").addEventListener("click", function(){
+    var selected_name = document.getElementById(selected_node+"_title").innerHTML;
+    var chosen_node = {};
+    
+    for(var row = 0; row < curr_selected_tree.length; row++){
+        for (var col = 0; col < curr_selected_tree[row].length; col++){
+            if(selected_name == curr_selected_tree[row][col].name){
+                Object.assign(chosen_node, curr_selected_tree[row][col]);
+                break;
+            }
+        }
+    }
+    var cost_arr = calculate_cost(chosen_node);
+    console.log(cost_arr);
+    
 });

@@ -9,6 +9,7 @@
 }
 
 #tree_header{
+    z-index: 30;
     position: fixed;
     top: 20px;
     left: 0px;
@@ -402,9 +403,50 @@
     cursor: pointer;
 }
 
+#get_cost{
+    position: absolute;
+    bottom: 5px;
+    left: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 500ms;
+    width: 30%;
+    height: 10%;
+    cursor: pointer;
+}
+
+#get_cost:hover{
+    color: white!important;
+    background-color: black;
+}
+
 /* ------------------------------------------------------ End of Info box styles ------------------------------------------------------ */
 
 /* ------------------------------------------------------ Tree styles ------------------------------------------------------ */
+
+
+.tree_diagram{
+    -webkit-animation: drop 300ms;
+    animation: drop 300ms;
+    top: 0px;
+}
+
+@-webkit-keyframes drop {
+    from {top: -2000px}
+    to {top: 0px}
+    
+}@keyframes drop {
+    from {top: -2000px}
+    to {top: 0px}
+}
+
+#diagram2{
+    left: 0px;
+    top: 0px;
+    transition: 300ms;
+}
+
+
 .panel{
     position: absolute;
     
