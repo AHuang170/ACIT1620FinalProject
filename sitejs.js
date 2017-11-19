@@ -36,6 +36,7 @@ var selected_node = -1;
 var curr_selected_tree = [];
 var info_box_present = false;
 
+
 var selected_gear = '';
 
 var weap_toggle = 0;
@@ -85,12 +86,15 @@ function disp_Node(x, y, parent_id, tree_arr){
                 selected_node = -1;
                 nDiv.style.borderColor = 'dimgray';
                 remove_info_box();
+
             }
             else{
                 document.getElementById(selected_node).style.borderColor = 'dimgray';
                 selected_node = nDiv.id;
                 nDiv.style.borderColor = 'turquoise';
                 disp_info_box(x, y, tree_arr);
+
+                clear_cost_panel();
             }
         }
         
@@ -281,6 +285,11 @@ function disp_info_box(x, y, tree_arr){
     var new_y = document.getElementById("info_box").offsetTop;
     var new_x = document.getElementById("info_box").offsetleft;
     
+    document.getElementById("main_cost_panel").style.top = "0px";
+    document.getElementById("main_cost_panel").style.left = "0px";
+    document.getElementById("shop_cost_line").innerHTML = "";
+    document.getElementById("main_cost_panel").style.visibility = "hidden";
+    document.getElementById("main_cost_panel").style.opacity = "0";
     
     
     info_box_present = true;
@@ -445,6 +454,13 @@ function remove_info_box(){
     document.getElementById("get_cost").style.visibility = "hidden";
     document.getElementById("get_cost").style.opacity = 0;
     info_box_present = false;
+    document.getElementById("main_cost_panel").style.top = "0px";
+    document.getElementById("main_cost_panel").style.left = "0px";
+    document.getElementById("shop_cost_line").innerHTML = "";
+    document.getElementById("main_cost_panel").style.visibility = "hidden";
+    document.getElementById("main_cost_panel").style.opacity = "0";
+    
+    clear_cost_panel();
 }
 
 function clear_list(){
@@ -635,7 +651,7 @@ function upgrade_options(curr_node){
         if(work_node.craft.length > 0){
             alt_total = add_dictionary(result_arr[0], get_keyVal_pair(work_node.craft));
             alt_total["Base"] = work_node.name;
-            alt_total["Mehtod"] = "Craft";
+            alt_total["Method"] = "Craft";
             result_arr.push(alt_total);
         }
         
@@ -664,6 +680,139 @@ function get_keyVal_pair(base_arr){
         result_dict[base_arr[i]] = parseInt(base_arr[i+1]);
     }
     return result_dict;
+}
+
+function dragPanel(panel){
+    var pos1 = 0;
+    var pos2 = 0;
+    var pos3 = 0;
+    var pos4 = 0;
+    
+    
+    document.getElementById("cost_panel_header").onmousedown = mouseDrag;
+    
+    function mouseDrag(e){
+        e = e || window.event;
+        
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = stopMouseDrag;
+        document.onmousemove = panelDrag;
+    }
+    
+    function panelDrag(e){
+        e = e|| window.event;
+        panel.style.transition = '0s';
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        
+        panel.style.top = (panel.offsetTop - pos2) + 'px';
+        panel.style.left = (panel.offsetLeft - pos1) + 'px';
+        
+        
+    }
+    
+    function stopMouseDrag(){
+        panel.style.transition = "300ms";
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+}
+
+function append_craft_options (cost_arr){
+    var work_arr = cost_arr.slice();
+    if(document.getElementById("options_cont").innerHTML != ""){
+        return;
+    }
+    if(cost_arr[0] != "N/A"){
+        document.getElementById("shop_cost_line").innerHTML = "Buy for " + cost_arr[0];
+    }
+    
+    var num_options = 0;
+    if(cost_arr[1].length > 0){
+        
+        num_options = 1;
+    }
+    num_options += cost_arr[2].length;
+    var container_height = (num_options  * 20) + 50;
+    var panel_height = container_height + 40;
+    
+    document.getElementById("main_cost_panel").style.height = panel_height + "px";
+    document.getElementById("options_cont").style.height = container_height + "px";
+    
+    if(cost_arr[1].length > 0 || work_arr[2].length > 0){
+        var op_nDiv = document.createElement('div');
+        var op_mBr_nDiv = document.createElement('div');
+    
+        op_nDiv.className = "details_cont";
+        op_mBr_nDiv.className = "min_bar";
+    
+        op_nDiv.id = "details_container";
+        op_mBr_nDiv.id = "details_min_bar";
+    
+        op_nDiv.appendChild(op_mBr_nDiv);
+        document.getElementById("options_cont").appendChild(op_nDiv);
+    }
+    
+    if(cost_arr[1].length > 0){
+        var cr_nDiv = document.createElement('div');
+        cr_nDiv.id = "cr_mat_0";
+        cr_nDiv.className = "cost_panel_line";
+        var craft_cost_obj = Object.assign({}, get_keyVal_pair(work_arr[1]));
+        cr_nDiv.onclick = function(){
+            expand_option(craft_cost_obj);
+        }
+        cr_nDiv.innerHTML = "Craft Directly";
+        document.getElementById("options_cont").appendChild(cr_nDiv);
+    }
+    
+    if(work_arr[2].length > 0){
+        
+        
+        for(var index = 0; index < work_arr[2].length; index++){
+            create_option(work_arr[2][index], index);
+        }
+    }
+    
+}
+
+function create_option(mat_obj, index){
+    var curr_obj = Object.assign(mat_obj);
+    
+    var entry = curr_obj.Method;
+    var base = curr_obj.Base;
+    var option_str = "";
+    var nDiv = document.createElement('div');
+    nDiv.id = "up_craft_" + index;
+    nDiv.className = "cost_panel_line";
+    option_str = entry.slice(0,1) + ": " + base;
+    nDiv.innerHTML = option_str;
+    nDiv.onclick = function(){
+        expand_option(curr_obj);
+    }
+    document.getElementById("options_cont").appendChild(nDiv);
+}
+
+function expand_option(mat_obj){
+    var working_arr = Object.assign({}, mat_obj);
+    var key_list = Object.keys(working_arr);
+    
+    key_list.splice(key_list.indexOf("Base"), 1);
+    key_list.splice(key_list.indexOf("Method"), 1);
+    
+    var window_height = ((key_list.length + 1) * 21) + 10;
+    
+    document.getElementById("details_container").innerHTML = "";
+    document.getElementById("details_container").style.height = window_height + 'px';
+    document.getElementById("details_container").style.left = "-204px";
+    
+    
+}
+
+function clear_cost_panel(){
+    document.getElementById("options_cont").innerHTML = "";
 }
 
 document.getElementById('gen_button').addEventListener("click", function(){
@@ -776,12 +925,21 @@ document.getElementById("get_cost").addEventListener("click", function(){
     for(var row = 0; row < curr_selected_tree.length; row++){
         for (var col = 0; col < curr_selected_tree[row].length; col++){
             if(selected_name == curr_selected_tree[row][col].name){
-                Object.assign(chosen_node, curr_selected_tree[row][col]);
+                chosen_node = Object.assign({}, curr_selected_tree[row][col]);
                 break;
             }
         }
     }
     var cost_arr = calculate_cost(chosen_node);
-    console.log(cost_arr);
-    
+    document.getElementById("main_cost_panel").style.left = '-209px';
+    document.getElementById("main_cost_panel").style.top = '0px';
+    document.getElementById("main_cost_panel").style.visibility = "visible";
+    document.getElementById("main_cost_panel").style.opacity = "1";
+    document.getElementById("cost_panel_header").innerHTML = chosen_node.name;
+    document.getElementById("cost_panel_header").style.color = update_rare_color(chosen_node.rarity);
+    //console.log(cost_arr);
+        
+    append_craft_options(cost_arr);
 });
+
+dragPanel(document.getElementById("main_cost_panel"));
