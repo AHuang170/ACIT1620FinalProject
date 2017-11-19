@@ -421,7 +421,7 @@
 }
 
 #main_cost_panel{
-    z-index: 25;
+    
     position: absolute;
     height: 100%;
     width: 200px;
@@ -436,7 +436,7 @@
     
 }
 
-#cost_panel_header{
+#main_cost_panel_header{
     position: absolute;
     height: 20px;
     width: 100%;
@@ -456,14 +456,13 @@
     color: white;
     background-color: black;
     cursor: pointer;
-
     border-bottom: 1px solid;
     border-bottom-color: chocolate;
 }
 
 .cost_panel_line:hover{
     color: black!important;
-    background-color: whitesmoke; 
+    background-color: whitesmoke!important; 
 }
 
 #shop_cost_line{
@@ -473,6 +472,7 @@
     height: 20px;
     width: 100%;
     color: white;
+    background-color: black;    
     text-align: center;
     border-bottom: 1px solid;
     border-bottom-color: chocolate;
@@ -484,33 +484,78 @@
     top: 41px;
     left: 0px;
     width: 100%;
+    background: black;
 }
 
 .details_cont{
-    z-index: -1;
+    
     position: absolute;
-    top: 0px;
+    top: -21px;
     left: 0px;
     height: 0px;
     width: 100%;
-    overflow: hidden;
+    
     background-color: black;
     transition: 300ms;
-    border: 1px solid;
+    border: 2px groove;
     border-color: chocolate;
+    border-top-style: hidden;
 }
 
-.min_bar{
+.options_header{
     position: absolute;
-    top: 0px;
-    left: -10px;
-    width: 10px;
-    height: 100%;
-    opacity: 0;
-    visibility: hidden;
-    background-image: url(Img/min_bar.jpg);
+    top: -22px;
+    left: -2px;
+    width: 100%;
+    height: 20px;
+    background-color: rgb(20,20,20);
+    color: white;
+    cursor: move;
+    text-align: center;
+    border: 2px groove;
+    border-color: chocolate;
+    border-bottom-style: hidden;
+    
 }
 
+.total_info_line{
+    
+    width:100%;
+    height: 20px;
+    border-top: 1px solid;
+    border-top-color: white;
+    
+    -webkit-animation: fade_in 300ms;
+    animation: fade_in 300ms;
+}
+
+@-webkit-keyframes fade_in {
+    from {opacity: 0}
+    to {opacity: 1}
+    
+}@keyframes fade_in {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+.totalCost_lable{
+    color: yellow;
+    text-align: left;
+    display: inline-block;
+    width: 20%;
+    left: 0px;
+    height: 100%;
+    
+}
+
+.totalCost_value{
+    color: white;
+    text-align: right;
+    display: inline-block;
+    width: 75%;
+    right: 0px;
+    height: 100%;
+}
 /* ------------------------------------------------------ End of Info box styles ------------------------------------------------------ */
 
 /* ------------------------------------------------------ Tree styles ------------------------------------------------------ */

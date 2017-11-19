@@ -36,6 +36,7 @@ var selected_node = -1;
 var curr_selected_tree = [];
 var info_box_present = false;
 
+var selected_option_id = "";
 
 var selected_gear = '';
 
@@ -688,8 +689,9 @@ function dragPanel(panel){
     var pos3 = 0;
     var pos4 = 0;
     
+    var head_id = panel.id + "_header";
     
-    document.getElementById("cost_panel_header").onmousedown = mouseDrag;
+    document.getElementById(head_id).onmousedown = mouseDrag;
     
     function mouseDrag(e){
         e = e || window.event;
@@ -737,22 +739,22 @@ function append_craft_options (cost_arr){
     }
     num_options += cost_arr[2].length;
     var container_height = (num_options  * 20) + 50;
-    var panel_height = container_height + 40;
+    var panel_height = container_height + 41;
     
     document.getElementById("main_cost_panel").style.height = panel_height + "px";
     document.getElementById("options_cont").style.height = container_height + "px";
     
     if(cost_arr[1].length > 0 || work_arr[2].length > 0){
         var op_nDiv = document.createElement('div');
-        var op_mBr_nDiv = document.createElement('div');
+        
     
         op_nDiv.className = "details_cont";
-        op_mBr_nDiv.className = "min_bar";
+        
     
         op_nDiv.id = "details_container";
-        op_mBr_nDiv.id = "details_min_bar";
+        
     
-        op_nDiv.appendChild(op_mBr_nDiv);
+        
         document.getElementById("options_cont").appendChild(op_nDiv);
     }
     
@@ -762,7 +764,7 @@ function append_craft_options (cost_arr){
         cr_nDiv.className = "cost_panel_line";
         var craft_cost_obj = Object.assign({}, get_keyVal_pair(work_arr[1]));
         cr_nDiv.onclick = function(){
-            expand_option(craft_cost_obj);
+            expand_option(craft_cost_obj, cr_nDiv.id);
         }
         cr_nDiv.innerHTML = "Craft Directly";
         document.getElementById("options_cont").appendChild(cr_nDiv);
@@ -789,30 +791,108 @@ function create_option(mat_obj, index){
     nDiv.className = "cost_panel_line";
     option_str = entry.slice(0,1) + ": " + base;
     nDiv.innerHTML = option_str;
+    
     nDiv.onclick = function(){
-        expand_option(curr_obj);
+        expand_option(curr_obj, nDiv.id);
     }
     document.getElementById("options_cont").appendChild(nDiv);
 }
 
-function expand_option(mat_obj){
+function expand_option(mat_obj, option_id){
     var working_arr = Object.assign({}, mat_obj);
     var key_list = Object.keys(working_arr);
     
-    key_list.splice(key_list.indexOf("Base"), 1);
-    key_list.splice(key_list.indexOf("Method"), 1);
+    if(option_id == selected_option_id){
+        return;
+    }
+    
+    else{
+        document.getElementById(option_id).style.color = "black";
+        document.getElementById(option_id).style.backgroundColor = "rgb(175,175,175)";
+        
+        if(selected_option_id != ""){
+            document.getElementById(selected_option_id).style.color = "white";
+            document.getElementById(selected_option_id).style.backgroundColor = "black";
+        }
+        
+        selected_option_id = option_id;
+        
+    }
+    
+    if (key_list.indexOf("Base") != -1){
+        key_list.splice(key_list.indexOf("Base"), 1);
+    }
+    
+    if(key_list.indexOf("Method") != -1){
+        key_list.splice(key_list.indexOf("Method"), 1);
+    }
+    
     
     var window_height = ((key_list.length + 1) * 21) + 10;
     
-    document.getElementById("details_container").innerHTML = "";
+    if(document.getElementById("details_container").innerHTML != ""){
+        document.getElementById("details_container").innerHTML = "";
+    }
+    else{
+        document.getElementById("details_container").style.left = "-206px";
+        document.getElementById("details_container").style.top = "-21px";
+    }
+    
     document.getElementById("details_container").style.height = window_height + 'px';
-    document.getElementById("details_container").style.left = "-204px";
     
     
+    
+    var op_head = document.createElement('div');
+    op_head.className = "options_header";
+    op_head.id = "details_container_header";
+    document.getElementById("details_container").appendChild(op_head);
+    op_head.innerHTML = "Total Cost";
+    dragPanel(document.getElementById("details_container"));
+    
+    //console.log(key_list);
+    key_list.sort();
+    for (var index = 0; index < key_list.length; index++){
+        if(key_list[index] != "Cost"){
+            add_mat(key_list[index], working_arr[key_list[index]], "details_container");
+        }
+    }
+    add_mat("Cost", working_arr["Cost"], "details_container");
+}
+
+function add_mat (mat_name, mat_amt, parent_id){
+    //console.log(mat_name, mat_amt);
+    var line_nDiv = document.createElement('div')
+    var name_nDiv = document.createElement('div');
+    var amt_nDiv = document.createElement('div');
+    
+    if(mat_name != "Cost"){
+        name_nDiv.className = "mat_lable";
+        amt_nDiv.className = "mat_value";
+        
+        name_nDiv.innerHTML = mat_name;
+        amt_nDiv.innerHTML = mat_amt;
+        
+        
+    }
+    else{
+        name_nDiv.className = "totalCost_lable";
+        amt_nDiv.className = "totalCost_value";
+        
+        name_nDiv.innerHTML = "Total: ";
+        amt_nDiv.innerHTML = mat_amt + 'z';
+    }
+    
+    line_nDiv.className = "total_info_line";
+    
+    line_nDiv.appendChild(name_nDiv);
+    line_nDiv.appendChild(amt_nDiv);
+    
+    document.getElementById(parent_id).appendChild(line_nDiv);
 }
 
 function clear_cost_panel(){
     document.getElementById("options_cont").innerHTML = "";
+    selected_option_id = "";
 }
 
 document.getElementById('gen_button').addEventListener("click", function(){
@@ -933,13 +1013,19 @@ document.getElementById("get_cost").addEventListener("click", function(){
     var cost_arr = calculate_cost(chosen_node);
     document.getElementById("main_cost_panel").style.left = '-209px';
     document.getElementById("main_cost_panel").style.top = '0px';
+
+    if(document.getElementById("details_container") != null){
+        document.getElementById("details_container").style.left = "-206px";
+        document.getElementById("details_container").style.top = "-21px";
+    }
     document.getElementById("main_cost_panel").style.visibility = "visible";
     document.getElementById("main_cost_panel").style.opacity = "1";
-    document.getElementById("cost_panel_header").innerHTML = chosen_node.name;
-    document.getElementById("cost_panel_header").style.color = update_rare_color(chosen_node.rarity);
+    document.getElementById("main_cost_panel_header").innerHTML = chosen_node.name;
+    document.getElementById("main_cost_panel_header").style.color = update_rare_color(chosen_node.rarity);
     //console.log(cost_arr);
         
     append_craft_options(cost_arr);
 });
 
 dragPanel(document.getElementById("main_cost_panel"));
+
