@@ -336,12 +336,13 @@
 .mat_lable{
     text-align: left;
     display: inline-block;
-    width: 86%;
+    width: 87%;
     left: 0px;
     height: 100%;
     color: dodgerblue;
     vertical-align: top;
     overflow: hidden;
+    font-size: 11pt;
 }
 
 .mat_value{
@@ -368,7 +369,7 @@
     color: white;
     text-align: right;
     display: inline-block;
-    width: 73%;
+    width: 76%;
     right: 0px;
     height: 100%;
 }
@@ -629,12 +630,40 @@
 #control{
     position:fixed;
     z-index: 100;
-    right:0px;
-    top:50px;
+    right:15px;
+    top:3px;
     width:150px;
-    height:200px;
-    
-    
+    height:150;
+    transition: 300ms;
+}
+
+.control_elements{
+    width: 100%;
+}
+
+#tree_selection{
+    height: 40%;
+}
+
+#gen_button{
+    height: 30%;
+}
+
+#del_button{
+    height: 30%;
+}
+
+#min_bar{
+    position: absolute;
+    top: 0px;
+    left: -20px;
+    width: 20px;
+    height: 100%;
+    background-image: url(Img/menu_bg.jpeg);
+    background-size: cover;
+    cursor: pointer;
+    color: transparent;
+    overflow: hidden;
 }
 /* ------------------------------------------------------ End of Control styles -----------------------------------------------*/
 
@@ -866,6 +895,8 @@
 
     height: 60%;
     width: 80%;
+    max-height: 562px;
+    max-width: 900px
 }
 
 @keyframes spawn{
