@@ -566,14 +566,15 @@
     -webkit-animation: drop 300ms;
     animation: drop 1s;
     top: 0px;
+    
 }
 
 @-webkit-keyframes drop {
-    from {top: -2000px}
+    from {top: -3000px}
     to {top: 0px}
     
 }@keyframes drop {
-    from {top: -2000px}
+    from {top: -3000px}
     to {top: 0px}
 }
 

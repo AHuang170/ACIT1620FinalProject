@@ -417,6 +417,7 @@ function update_rare_color(rare){
             
         case 2:
             color = "rgb(140,58,165)";
+            //color = "fuchsia";
             break;
             
         case 3:
@@ -448,7 +449,7 @@ function update_rare_color(rare){
             break;
             
         case 10:
-            color = "purple";
+            color = "deeppink";
             break;
             
         
