@@ -789,15 +789,15 @@ function append_craft_options (cost_arr){
         
         
         for(var index = 0; index < work_arr[2].length; index++){
-            create_option(work_arr[2][index], index);
+            create_option(work_arr[2][index], index, container_height);
         }
     }
     
 }
 
-function create_option(mat_obj, index){
+function create_option(mat_obj, index, parent_height){
     var curr_obj = Object.assign(mat_obj);
-    
+    var cont_height = parent_height;
     var entry = curr_obj.Method;
     var base = curr_obj.Base;
     var option_str = "";
@@ -808,15 +808,15 @@ function create_option(mat_obj, index){
     nDiv.innerHTML = option_str;
     
     nDiv.onclick = function(){
-        expand_option(curr_obj, nDiv.id);
+        expand_option(curr_obj, nDiv.id, cont_height);
     }
     document.getElementById("options_cont").appendChild(nDiv);
 }
 
-function expand_option(mat_obj, option_id){
+function expand_option(mat_obj, option_id, cont_height){
     var working_arr = Object.assign({}, mat_obj);
     var key_list = Object.keys(working_arr);
-    
+    var height_offset = cont_height;
     if(option_id == selected_option_id){
         return;
     }
@@ -850,7 +850,8 @@ function expand_option(mat_obj, option_id){
     }
     else{
         document.getElementById("details_container").style.left = "-206px";
-        document.getElementById("details_container").style.top = "-21px";
+        document.getElementById("details_container").style.top = (-1 * (window_height - height_offset)) + 'px';
+        //document.getElementById("details_container").style.bottom = "0px";
     }
     
     document.getElementById("details_container").style.height = window_height + 'px';
