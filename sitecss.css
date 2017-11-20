@@ -564,7 +564,7 @@
 
 .tree_diagram{
     -webkit-animation: drop 300ms;
-    animation: drop 300ms;
+    animation: drop 1s;
     top: 0px;
 }
 
