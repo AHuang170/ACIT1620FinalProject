@@ -480,8 +480,9 @@ function remove_info_box(){
     document.getElementById("shop_cost_line").innerHTML = "";
     document.getElementById("main_cost_panel").style.visibility = "hidden";
     document.getElementById("main_cost_panel").style.opacity = "0";
-    
     clear_cost_panel();
+    document.getElementById("info_box").style.top = '-1000px';
+    document.getElementById("info_box").style.left = '50px';
 }
 
 function clear_list(){
@@ -1062,4 +1063,74 @@ document.getElementById("min_bar").addEventListener("click", function(){
 });
 
 dragPanel(document.getElementById("main_cost_panel"));
+/*===============================================INDEX STUFF===============================================*/
+
+var prev_selection = -1;
+var initiated = true;
+
+if(!initiated){
+    document.getElementById("selection").style.right = "0px";
+    document.getElementById("selection").style.left = "0px";
+    document.getElementById("selection").style.margin = "auto";
+    document.getElementById("selection").style.visibility = "visible";
+    document.getElementById("selection").style.opacity = "1";
+    initiated = true;
+    
+}
+
+function reset_prev_selection(){
+    if(prev_selection >=1 && prev_selection <= 3){
+        document.getElementById("selection"+prev_selection).style.backgroundColor = "rgba(250,250,250,0.5)";
+        document.getElementById("selection"+prev_selection).style.color = "white";
+    }
+}
+
+document.getElementById("selection1").addEventListener("click", function(){
+    if(prev_selection != 1){
+        document.getElementById("selection1").style.backgroundColor = "rgba(5,5,5,0.5)";
+        document.getElementById("selection1").style.color = "rgb(250,250,250)";
+        reset_prev_selection();
+        prev_selection = 1;
+    }
+    
+});
+
+document.getElementById("selection2").addEventListener("click", function(){
+    if(prev_selection != 2){
+        document.getElementById("selection2").style.backgroundColor = "rgba(5,5,5,0.5)";
+        document.getElementById("selection2").style.color = "rgb(250,250,250)";
+        reset_prev_selection();
+        prev_selection = 2;
+    }
+    
+});
+
+document.getElementById("selection3").addEventListener("click", function(){
+    if(prev_selection != 3){
+        document.getElementById("selection3").style.backgroundColor = "rgba(5,5,5,0.5)";
+        document.getElementById("selection3").style.color = "rgb(250,250,250)";
+        reset_prev_selection();
+        prev_selection = 3;
+    }
+    
+});
+
+document.getElementById("selection_header").addEventListener("click", function(){
+    if(document.getElementById("selection_header").innerHTML != 'O'){
+        document.getElementById("selection_header").style.width = "16px";
+        document.getElementById("selection_header").innerHTML = 'O';
+        document.getElementById("selection").className = "select_box2 col-1 col-xm-1 col-sm-7 col-md-6 col-lg-4";
+        document.getElementById("selection").style.maxWidth = "140px";
+        
+    }
+    else{
+        document.getElementById("selection_header").style.width = "100%";
+        setTimeout(function(){
+            document.getElementById("selection_header").innerHTML = 'Choose an Option';
+        }, 100);
+        document.getElementById("selection").className = "select_box col-1 col-xm-1 col-sm-7 col-md-6 col-lg-4";
+        document.getElementById("selection").style.maxHeight = "";
+        
+    }
+});
 
