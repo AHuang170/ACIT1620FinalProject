@@ -25,11 +25,11 @@ var gs_Iron_Sword_Path = [
     [{type: 'node', name: "Exemplar Blade", rarity: 8, attack: 1104, ele_type: '(A)Fire', ele_val: '400', num_slot: 'OOO', affinity: '10%', flavour: "The pinnacle of the Ravager Blade family. Those who wield it will never know fear.", upgrade: ["60000z", "Eltatlite Ore", 5, "Novacrystal", 4, "Emperor Hopper", 3], craft: ["90000z", "Eltatlite Ore", 8, "Novacrystal", 5, "Emperor Hopper", 4, "Carbalite Ore", 15], shop: 'N/A', sharp: "Img/Weap/gs/Exemplar_Blade/base_sharp.png", p_sharp: "Img/Weap/gs/Exemplar_Blade/plus_sharp.png", pic: "Img/Weap/gs/Exemplar_Blade/render.png", parent: ["Devastator Blade", 0, 14], playstyle: 'Blademaster', extra: 'Defense +35'}, {type: 'node', name: "Chrome Hell", rarity: 8, attack: 1056, ele_type: 'Poison', ele_val: '420', num_slot: 'OO-', affinity: '20%', flavour: "A strong, razor-sharp edge (hence the name). This blade hides a secret poison.", upgrade: ["60000z", "Velocidrome Hardclaw", 3, "Eltalite Ore", 4, "Deadly Poison Sac", 3, "Fey Wyvern Gem", 1], craft: ["90000z", "Eltatlite Ore", 8, "Firecell St   one", 5, "Monster Essence", 10, "Fey Wyvern Gem", 1], shop: 'N/A', sharp: "Img/Weap/gs/Chrome_Hell/base_sharp.png", p_sharp: "Img/Weap/gs/Chrome_Hell/plus_sharp.png", pic: "Img/Weap/gs/Chrome_Hell/render.png", parent: ["Chrome Quietus", 1, 14], playstyle: 'Blademaster', extra: ''}, {type: 'node', name: "Blood Shock", rarity: 9, attack: 1200, ele_type: 'Thunder', ele_val: '630', num_slot: 'O--', affinity: '0%', flavour: "A Great Sword made from Red Khezu materials. It runs with blood that continues to redden.", upgrade: ["110000z", "Special Special Cut", 2, "B. Gravios Crown", 2, "Cosmicite Ore", 5], craft: [], shop: 'N/A', sharp: "Img/Weap/gs/Blood_Shock/base_sharp.png", p_sharp: "Img/Weap/gs/Blood_Shock/plus_sharp.png", pic: "Img/Weap/gs/Blood_Shock/render.png", parent: ["Blood Sword", 2, 14], playstyle: 'Blademaster', extra: ''}, {type: 'node', name: "Rampage Temperline", rarity: 9, attack: 1392, ele_type: '(A)Blastblight', ele_val: '420', num_slot: 'O--', affinity: '-20%', flavour: "A Berserk Tetsucabra Great Sword whose edge relfects hell's boilling inferno.", upgrade: ["100000z", "B. Tetsucabra Hardclaw", 6, "B. Tetsucabra Gnawrl", 4, "Paddock Cream", 3, "Allfire Stone", 3], craft: [], shop: 'N/A', sharp: "Img/Weap/gs/Rampage_Temperline/base_sharp.png", p_sharp: "Img/Weap/gs/Rampage_Temperline/plus_sharp.png", pic: "Img/Weap/gs/Rampage_Temperline/render.png", parent: ["Rampage Blade", 3, 14], playstyle: 'Blademaster', extra: ''}, {type: 'node', name: "Cliffsword Titanius", rarity: 9, attack: 1488, ele_type: '(A)Fire', ele_val: '390', num_slot: 'OOO', affinity: '0%', flavour: "A fierce blade with rigid edges. One swing can rend both heaven and earth.", upgrade: ["120000z", "S. Uragaan Scute+", 5, "B. Gravios Cortex", 8, "Flame Shard", 4, "Gravios Pallium", 1], craft: [], shop: 'N/A', sharp: "Img/Weap/gs/Cliffsword_Titanius/base_sharp.png", p_sharp: "Img/Weap/gs/Cliffsword_Titanius/plus_sharp.png", pic: "Img/Weap/gs/Cliffsword_Titanius/render.png", parent: ["Cragscliff+", 4, 14], playstyle: 'Blademaster', extra: 'Defense +50'}, {type: 'node', name: "L'Eclat", rarity: 9, attack: 1056, ele_type: 'Dragon', ele_val: '320', num_slot: 'O--', affinity: '65%', flavour: "A blade like a prism that transforms sunlight into a mesmerizing spell.", upgrade: ["90000z", "Gore Magala Shredder", 2, "Gore Magala Cortex", 4, "Gore Magala Eclipse", 2, "Gore Magala Mantle", 1], craft: [], shop: 'N/A', sharp: "Img/Weap/gs/L'Eclat/base_sharp.png", p_sharp: "Img/Weap/gs/L'Eclat/plus_sharp.png", pic: "Img/Weap/gs/L'Eclat/render.png", parent: ["L'Apotheose", 5, 14], playstyle: 'Blademaster', extra: ''}, {type: 'node', name: "Stygian Acedia", rarity: 10, attack: 1296, ele_type: 'Dragon', ele_val: '550', num_slot: 'OOO', affinity: '0%', flavour: "A crimson blade with an ominous air. Its jagged blades slice foes to bits with black lightning.", upgrade: ["120000z", "S. Zinogre Dragonlocks", 6, "Zinogre Lash", 2, "Lrg ElderDragon Bone", 5, "S. Zinogre Skymerald", 1], craft: [], shop: 'N/A', sharp: "Img/Weap/gs/Stygian_Acedia/base_sharp.png", p_sharp: "Img/Weap/gs/Stygian_Acedia/plus_sharp.png", pic: "Img/Weap/gs/Stygian_Acedia/render.png", parent: ["Brimstone Drakepride+", 6, 14], playstyle: 'Blademaster', extra: ''}, {type: 'node', name: "Great Demon Hot Rod", rarity: 9, attack: 1296, ele_type: 'Thunder', ele_val: '300', num_slot: 'OO-', affinity: '30%', flavour: "Wrapped in thunderous Rajang fur, this weapon can easily cleave anything it touches.", upgrade: ["90000z", "Rajang Hardfang", 3, "Rajang Wildpelt", 4, "Gold Rajang Pelt+", 1, "Purecrystal", 1], craft: [], shop: 'N/A', sharp: "Img/Weap/gs/Great_Demon_Hot_Rod/base_sharp.png", p_sharp: "Img/Weap/gs/Great_Demon_Hot_Rod/plus_sharp.png", pic: "Img/Weap/gs/Great_Demon_Hot_Rod/render.png", parent: ["Great Demon Rod", 7, 14], playstyle: 'Blademaster', extra: ''}], 
     [{type: 'connector', pic: 'Img/connector_5.png'}, {type: 'connector', pic: 'Img/connector_5.png'}, {type: 'blank'}, {type: 'blank'}, {type: 'blank'}, {type: 'connector', pic: 'Img/connector_5.png'}, {type: 'blank'}, {type: 'connector', pic: 'Img/connector_5.png'}], 
     [{type: 'node', name: "Grandglory Blade", rarity: 9, attack: 1248, ele_type: '(A)Fire', ele_val: '430', num_slot: 'OOO', affinity: '10%', flavour: "The pinnacle of the Ravager Blade family. Those who wield it will never know fear.", upgrade: ["100000z", "P. Rathian Cortex", 2, "Tigrex Hardclaw", 5, "Eltatlite Ore", 10], craft: [], shop: 'N/A', sharp: "Img/Weap/gs/Grandglory_Blade/base_sharp.png", p_sharp: "Img/Weap/gs/Grandglory_Blade/plus_sharp.png", pic: "Img/Weap/gs/Grandglory_Blade/render.png", parent: ["Exemplar Blade", 0, 16], playstyle: 'Blademaster', extra: 'Defense +40'}, {type: 'node', name: "Chrome Heaven", rarity: 9, attack: 1152, ele_type: 'Poison', ele_val: '420', num_slot: 'OOO', affinity: '30%', flavour: "A strong, razor-sharp edge (hence the name). This blade hides a secret poison.", upgrade: ["100000z", "Basarios Cortex", 4, "Meldspar Ore", 2, "Lrg Wyvern Gem", 1], craft: [], shop: 'N/A', sharp: "Img/Weap/gs/Chrome_Heaven/base_sharp.png", p_sharp: "Img/Weap/gs/Chrome_Heaven/plus_sharp.png", pic: "Img/Weap/gs/Chrome_Heaven/render.png", parent: ["Chrome Hell", 1, 16], playstyle: 'Blademaster', extra: ''}, {type: 'blank'}, {type: 'blank'}, {type: 'blank'}, {type: 'node', name: "L'Origine", rarity: 10, attack: 1152, ele_type: 'Dragon', ele_val: '400', num_slot: 'O--', affinity: '65%', flavour: "A blade like a prism that transforms sunlight into a mesmerizing spell.", upgrade: ["130000z", "S. Magala Purifier", 2, "S. Magala Cortex", 4, "S. Magala Lightwing", 2, "S. Magala Mantle", 1], craft: [], shop: 'N/A', sharp: "Img/Weap/gs/L'Origine/base_sharp.png", p_sharp: "Img/Weap/gs/L'Origine/plus_sharp.png", pic: "Img/Weap/gs/L'Origine/render.png", parent: ["L'Eclate", 5, 16], playstyle: 'Blademaster', extra: ''}, {type: 'blank'}, {type: 'node', name: "Demonlord Rod", rarity: 10, attack: 1344, ele_type: 'Thunder', ele_val: '350', num_slot: 'OO-', affinity: '30%', flavour: "A golden mass of Rajang menace. One swing summons thunderclouds that bring ruin to the area.", upgrade: ["120000z", "Ghoulish Golden Gorer", 2, "Rajang Hardclaw", 5, "Rajang Apoplexy", 4, "Rajang Heart", 1], craft: [], shop: 'N/A', sharp: "Img/Weap/gs/Demonlord_Rod/base_sharp.png", p_sharp: "Img/Weap/gs/Demonlord_Rod/plus_sharp.png", pic: "Img/Weap/gs/Demonlord_Rod/render.png", parent: ["Great Demon Hot Rod", 7, 16], playstyle: 'Blademaster', extra: ''}]
-]
+];
 
 var gs_Amons_Sword_Path = [
     [{type: 'node', name: "Amon's Sword", rarity: 10, attack: 1296, ele_type: 'Fire', ele_val: '520', num_slot: '---', affinity: '20%', flavour: "A huge sword imbued with a supernatural power. Its burning flame metls evern metal and tears through everything.", upgrade: [], craft: ["100000z", "Balbadd Royal Sword", 3, "M. Tigrex Trigger", 4, "Allfire Stone", 2, "Tigrex Mantle", 1], shop: 'N/A', sharp: "Img/Weap/gs/Amons_Sword/base_sharp.png", p_sharp: "Img/Weap/gs/Amons_Sword/plus_sharp.png", pic: "Img/Weap/gs/Amons_Sword/render.png", parent: [], playstyle: 'Blademaster', extra: ''}]
-]
+];
 
 //{type: 'node', name: "", rarity: , attack: , ele_type: '', ele_val: '', num_slot: '', affinity: '', flavour: "", upgrade: [], craft: [], shop: '', sharp: "", p_sharp: "", pic: "", parent: [], playstyle: '', extra: ''}
 //{type: 'connector', pic: 'Img/connector_.png'}
@@ -53,10 +53,12 @@ var bow_trees = [];
 var node_num = 0;
 var selected_node = -1;
 var curr_selected_tree = [];
+var curr_selected_tree_list = [];
+var curr_selected_option = "";
 var info_box_present = false;
 
 var selected_option_id = "";
-
+var prev_sel_name = "";
 var selected_gear = '';
 
 var weap_toggle = 0;
@@ -85,7 +87,7 @@ function disp_Node(x, y, parent_id, tree_arr){
     nImg.src = tree_arr[y][x].pic;
     
     nDiv.style.top = (y*100)+'px';
-    nDiv.style.left = (x*100 + 1)+'px';
+    nDiv.style.left = (x*100)+'px';
    
     nDiv.style.borderColor = "dimgray";
     
@@ -96,10 +98,14 @@ function disp_Node(x, y, parent_id, tree_arr){
     //nDiv.style.textShadow = "1px 0px rgba(156,154,160,0.5)";
     //nTitle.style.textShadow = "0px 1px grey";
     nDiv.onclick = function(){
+        var div_coor = Object.assign({},getPos(nDiv));
+        
         if(selected_node == -1){
             selected_node = nDiv.id;
             nDiv.style.borderColor = 'turquoise';
             disp_info_box(x, y, tree_arr);
+            move_info_box(div_coor.x, div_coor.y);
+            scroll_window(div_coor.x, div_coor.y);
         }
         else{
             if(selected_node == nDiv.id){
@@ -113,7 +119,9 @@ function disp_Node(x, y, parent_id, tree_arr){
                 selected_node = nDiv.id;
                 nDiv.style.borderColor = 'turquoise';
                 disp_info_box(x, y, tree_arr);
-
+                move_info_box(div_coor.x, div_coor.y);
+                //window.scrollTo(div_coor.x + 50, div_coor.y + 50);
+                scroll_window(div_coor.x, div_coor.y);
                 clear_cost_panel();
             }
         }
@@ -146,13 +154,11 @@ function disp_Conn(x, y, parent_id, tree_arr){
     
 }
 
-function disp_Tree(tree_arr){
-    
-    
-    delete_tree();
-    
+function disp_Tree(tree_arr, id_name, parent_id){
+    var created_id = id_name;
+    var parent_ele_id = parent_id;
     var nDiv = document.createElement('div');
-    nDiv.id = 'diagram';
+    nDiv.id = created_id;
     nDiv.style.position = 'absolute';
     
     nDiv.style.left = '0px';
@@ -172,8 +178,8 @@ function disp_Tree(tree_arr){
     
     width *= 100;
     
-    nDiv.style.height = (height + 50)+'px';
-    nDiv.style.width = (width + 50)+'px';
+    nDiv.style.height = (height)+'px';
+    nDiv.style.width = (width)+'px';
     
     var r_limit = document.createElement('div');
     var b_limit = document.createElement('div');
@@ -187,7 +193,7 @@ function disp_Tree(tree_arr){
     nDiv.appendChild(r_limit);
     nDiv.appendChild(b_limit);
     
-    document.getElementById("content").appendChild(nDiv);
+    document.getElementById(parent_ele_id).appendChild(nDiv);
     
     for (var y = 0; y < tree_arr.length; y++){
         for(var x = 0; x < tree_arr[y].length; x++){
@@ -217,9 +223,7 @@ function delete_tree(){
     
     var content_div = document.getElementById("content");
     var tree_div = document.getElementById('diagram');
-    var dia_div = document.getElementById('diagram2');
     
-
     if(tree_div != null){
 
         content_div.removeChild(tree_div);    
@@ -229,6 +233,29 @@ function delete_tree(){
     }
 
     
+}
+
+function delete_listings(){
+    var tree_div = document.getElementById('listings');
+
+    if(tree_div != null){
+
+        document.body.removeChild(tree_div);    
+        node_num = 0;
+        selected_node = -1;
+        remove_info_box();
+    }
+}
+
+function delete_rare_list(){
+    var tree_div = document.getElementById('rare_list');
+
+    if(tree_div != null){
+        document.getElementById("listings").removeChild(tree_div);    
+        node_num = 0;
+        selected_node = -1;
+        remove_info_box();
+    }
 }
 
 function toggle_page(page_num){
@@ -295,8 +322,12 @@ function disp_info_box(x, y, tree_arr){
     }
 
     
-    document.getElementById("info_box").style.top = (y* 100 + 20)+'px';
-    document.getElementById("info_box").style.left = (x*100 +102)+'px';
+    //document.getElementById("info_box").style.top = (y* 100 + 20)+'px';
+    //document.getElementById("info_box").style.left = (x*100 +102)+'px';
+    
+    //document.getElementById("info_box").style.top = y+'px';
+    //document.getElementById("info_box").style.left = x +'px';
+    
     document.getElementById("info_box").style.visibility = "visible";
     document.getElementById("info_box").style.opacity = 1;
     document.getElementById("page_1").style.visibility = "visible";
@@ -490,12 +521,14 @@ function clear_list(){
     while (drop_list.length > 1){
         drop_list.remove(1);
     }
+    curr_selected_option = '';
 }
 
 function option_select (option){
     if(option.indexOf("wpn_") != -1){
         var wpn_option = option.replace("wpn_", "");
         select_wpn_type(wpn_option);
+        
     }
     else if(option.indexOf("armor_") != -1){
         var amr_option = option.replace("armor_", "");
@@ -511,26 +544,34 @@ function select_wpn_type(selection){
         selected_gear = selection;
         clear_list();
         delete_tree();
+        delete_listings();
+        delete_name_list();
+        set_selection(-1);
+        remove_info_box();
+        selected_node = -1;
         
+        document.getElementById("selection").style.visibility = "hidden";
+        document.getElementById("selection").style.opacity = "0";
+        reset_prev_selection();
         
-    
-        var tree_arr_cat = eval(selection + "_trees");
-        for(var index = 0; index < tree_arr_cat.length; index++){
+        var selected_wpn_type_lise = eval(selection + "_trees");
+        
+        for(var index = 0; index < selected_wpn_type_lise.length; index++){
             var new_option = document.createElement("option");
-            var new_op_text = tree_arr_cat[index];
+            var new_op_text = selected_wpn_type_lise[index];
 
             while( new_op_text.indexOf("_") != -1){
                 new_op_text = new_op_text.replace("_", " ");
             }
 
-            var new_op_val = selection + "_" + tree_arr_cat[index];
+            var new_op_val = selected_gear + "_" + selected_wpn_type_lise[index];
 
             new_option.innerHTML = new_op_text;
             new_option.value = new_op_val;
 
             document.getElementById("tree_selection").add(new_option);
         }
-        
+        display_control();
     }
     update_header(selection);
     
@@ -918,25 +959,58 @@ function clear_cost_panel(){
 }
 
 document.getElementById('gen_button').addEventListener("click", function(){
-    var selected_tree = document.getElementById("tree_selection").value;
-    if (selected_tree != "Empty"){
-        disp_Tree(eval(selected_tree));
-        display_tree_header();
-        update_header_body(selected_tree);
-        curr_selected_tree = eval(selected_tree);
+    var selected_option = document.getElementById("tree_selection").value;
+    if(selected_option != "Empty"){
+        update_header_body(selected_option);
+        if(curr_selected_option != selected_option){
+            curr_selected_option = selected_option;
+            display_tree_header();
+
+            disp_selection_box();
+            reset_prev_selection();
+            delete_tree();
+            hide_controls();
+            curr_selected_tree = eval(curr_selected_option).slice();
+        
+        }
+        
     }
+    
+    
     
 });
 
 document.getElementById('del_button').addEventListener("click", function(){
-    
     delete_tree();
+    
+    remove_info_box();
+    selected_node = -1;
+    if(document.getElementById("rare_list") != null){
+        delete_rare_list();
+        document.getElementById("listings").style.visibility = "visible";
+    }
+    else if(document.getElementById("chosen_obj_disp") != null){
+        delete_chosen_node();
+    }
+    else{
+        delete_listings();
+        reset_prev_selection();
+        disp_selection_box();
+        delete_name_list();
+        curr_selected_option = '';
+        document.getElementById("tree_selection").value = "Empty";
+    }
+    
+    
     document.getElementById("tree_header_bot").innerHTML = "";
 });
 
 document.getElementById("toggle_img").addEventListener("click", function(){
     document.getElementById("options").style.visibility = 'hidden';
     document.getElementById("options").style.opacity = '0';
+
+    document.getElementById("options_bg").style.visibility = 'hidden';
+    document.getElementById("options_bg").style.opacity = '0';
     
     document.getElementById("toggle_button").style.visibility = 'visible';
     document.getElementById("toggle_button").style.opacity = '1';
@@ -946,6 +1020,9 @@ document.getElementById("toggle_img").addEventListener("click", function(){
 document.getElementById("toggle_button").addEventListener("click", function(){
     document.getElementById("toggle_button").style.visibility = 'hidden';
     document.getElementById("toggle_button").style.opacity = '0';
+    
+    document.getElementById("options_bg").style.visibility = 'visible';
+    document.getElementById("options_bg").style.opacity = '1';
     
     document.getElementById("options").style.visibility = 'visible';
     document.getElementById("options").style.opacity = '1';
@@ -964,10 +1041,16 @@ document.getElementById("op_weap").addEventListener("click", function(){
     var new_val1;
     var new_val2;
     
+    var pan_ele = document.getElementById("options_containter");
+    var pan_style = window.getComputedStyle(pan_ele);
+    var pan_top = parseInt(pan_style.getPropertyValue('top'));
+    
     if(weap_toggle == 0){
         element1.style.top = 280 + 'px';
         
         weap_toggle = 1;
+        
+        
         
         if(arm_toggle == 1){
             element2.style.top = 420 + 'px';
@@ -980,6 +1063,8 @@ document.getElementById("op_weap").addEventListener("click", function(){
     else{
         element1.style.top = 0 + 'px';
         
+        
+        
         if(arm_toggle == 1){
             element2.style.top = 140 + 'px';
         }
@@ -990,7 +1075,7 @@ document.getElementById("op_weap").addEventListener("click", function(){
         weap_toggle = 0;
     }
     
-
+    
 });
 
 document.getElementById("op_armor").addEventListener("click", function(){
@@ -1057,7 +1142,7 @@ document.getElementById("min_bar").addEventListener("click", function(){
         ctrl_min_bar.innerHTML = "";
     }
     else{
-        document.getElementById("control").style.right = "15px";
+        document.getElementById("control").style.right = "0px";
         ctrl_min_bar.innerHTML = " ";
     }
 });
@@ -1066,71 +1151,494 @@ dragPanel(document.getElementById("main_cost_panel"));
 /*===============================================INDEX STUFF===============================================*/
 
 var prev_selection = -1;
-var initiated = true;
-
-if(!initiated){
-    document.getElementById("selection").style.right = "0px";
-    document.getElementById("selection").style.left = "0px";
-    document.getElementById("selection").style.margin = "auto";
-    document.getElementById("selection").style.visibility = "visible";
-    document.getElementById("selection").style.opacity = "1";
-    initiated = true;
-    
-}
 
 function reset_prev_selection(){
     if(prev_selection >=1 && prev_selection <= 3){
         document.getElementById("selection"+prev_selection).style.backgroundColor = "rgba(250,250,250,0.5)";
         document.getElementById("selection"+prev_selection).style.color = "white";
+        prev_selection = -1;
+        delete_chosen_node();
+        delete_name_list();
+        delete_rare_list();
+        delete_listings();
+        delete_tree();
+        
+        
     }
+}
+
+function set_selection(selected_num){
+    if(selected_num != -1){
+        document.getElementById("selection"+selected_num).style.backgroundColor = "rgba(5,5,5,0.5)";
+        document.getElementById("selection"+selected_num).style.color = "rgb(250,250,250)";
+    }
+    else{
+        document.getElementById("disp_select_button").style.visibility = "hidden";
+        document.getElementById("disp_select_button").style.opacity = "0";
+    }
+    
+    reset_prev_selection();
+    prev_selection = selected_num;
+    delete_listings();
+    delete_name_list();
+    remove_info_box();
+    selected_node = -1;
+}
+
+function disp_selection_box(){
+    document.getElementById("disp_select_button").style.visibility = "hidden";
+    document.getElementById("disp_select_button").style.opacity = "0";
+    
+    setTimeout(function(){
+        document.getElementById("selection").style.visibility = "visible";
+        document.getElementById("selection").style.opacity = "1";
+        document.getElementById("selection").style.right = "0px";
+        document.getElementById("selection_toggle").style.visibility = "hidden";
+        document.getElementById("selection_toggle").style.opacity = "0";
+        
+        
+        setTimeout(function(){
+            document.getElementById("selection").style.top = "100px";
+            document.getElementById("selection_header_text").innerHTML = "Choose an Option";
+            document.getElementById("selection_header").style.top = "-26px";
+        }, 150);
+        
+    }, 150);
+    
+    
+}
+
+function display_control(){
+    document.getElementById("control").style.visibility = 'visible';
+    document.getElementById("control").style.opacity = '1';
+    document.getElementById("min_bar").innerHTML = " ";
+    setTimeout(function(){
+        document.getElementById("control").style.right = "0px";
+    },100);
+}
+
+function hide_controls(){
+    document.getElementById("control").style.visibility = 'visible';
+    document.getElementById("control").style.opacity = '1';
+    document.getElementById("min_bar").innerHTML = "";
+    setTimeout(function(){
+        document.getElementById("control").style.right = "-150px";
+    },100);
+}
+
+function toggle_selection_box(){
+    var sBox_element = document.getElementById("selection");
+    var sBox_header = document.getElementById("selection_header")
+    if(document.getElementById("selection_header_text").innerHTML != 'Show Options'){
+        sBox_element.style.top = "-66px";
+        sBox_header.style.top = "66px";
+        document.getElementById("selection_header_text").innerHTML = "Show Options";
+        setTimeout(function(){
+            document.getElementById("selection_toggle").style.visibility = 'visible';
+            document.getElementById("selection_toggle").style.opacity = '1';
+        }, 200);
+        
+        
+    }
+    else{
+        
+        document.getElementById("selection_toggle").style.visibility = 'hidden';
+        document.getElementById("selection_toggle").style.opacity = '0';
+        setTimeout(function(){
+            sBox_element.style.top = "100px";
+            sBox_header.style.top = "-23px";
+            document.getElementById("selection_header_text").innerHTML = "Choose an Option";
+        }, 100);
+    }
+}
+
+function create_rarity_list(rare_list){
+    var nDiv = document.createElement('div');
+    var D_height = 20 * rare_list.length + 50;
+    var is_first = false;
+    nDiv.id = "listings";
+    nDiv.style.height = D_height + 'px';
+    
+    for(var index = 0;index < rare_list.length; index++){
+        is_first = (index == 0);
+        append_rare_list(rare_list[index], nDiv, is_first);
+    }
+    
+    document.body.appendChild(nDiv);
+}
+
+function append_rare_list(rarity, parent, is_first){
+    var rarity_value = rarity;
+    var nBox = document.createElement('div');
+    nBox.id = "rare_" + rarity_value;
+    nBox.className = "cost_panel_line";
+    nBox.innerHTML = "Rarity: " + rarity_value;
+    nBox.style.color = update_rare_color(rarity_value);
+    nBox.style.border = "1px solid";
+    nBox.style.borderColor = "chocolate";
+    if(!is_first){
+        nBox.style.borderTopStyle = "hidden";
+    }
+    
+    nBox.onclick = function(){
+        //document.getElementById("listings").style.opacity = "0";
+        document.getElementById("listings").style.visibility = "hidden";
+        list_wpn_by_rarity(rarity_value);
+        
+        
+        
+    };
+    parent.appendChild(nBox);
+}
+
+function list_wpn_by_rarity(input_rarity){
+    var working_tree = curr_selected_tree.slice();
+    var wpn_list = [];
+    
+    for(var row = 0; row < working_tree.length; row +=2){
+        for(var index = 0; index < working_tree[row].length; index++){
+            if(working_tree[row][index].type == 'node'){
+                if(working_tree[row][index].rarity == input_rarity)
+                    wpn_list.push(working_tree[row][index]);
+            }
+            
+        }
+    }
+    var formatted_arr = transpose_arr(wpn_list).slice();
+    //console.log(output_arr);
+    disp_Tree(formatted_arr, "rare_list", "listings");
+    //document.getElementById("rare_list").style.opacity = "1";
+}
+
+function transpose_arr(input_arr){
+    var working_arr = input_arr.slice();
+    var output_arr = [];
+    
+    for(var index = 0; index < working_arr.length; index++){
+        output_arr.push([working_arr[index]]);
+        if(index != working_arr.length - 1){
+            output_arr.push([{type: 'blank'}]);
+        }
+        
+    }
+    
+    return output_arr;
+}
+
+function getPos(el) {
+    
+    for (var lx=0, ly=0; el != null; lx += el.offsetLeft, ly += el.offsetTop, el = el.offsetParent);
+    return {x: lx,y: ly};
+}
+
+function move_info_box(x_coor, y_coor){
+    document.getElementById("info_box").style.top = y_coor + 'px';
+    document.getElementById("info_box").style.left = x_coor + 'px';
+}
+
+function create_name_list(){
+    var nDiv = document.createElement('div');
+    var nSel = document.createElement('select');
+    var nOp = document.createElement('option');
+    var nBut = document.createElement('button');
+    
+    nBut.id = "name_sel_but";
+    nDiv.id = "names_cont";
+    nSel.id = "name_list";
+    nOp.id = "default_name_op";
+    nOp.innerHTML = "Pick a Name";
+    nBut.innerHTML = "Select";
+    
+    nBut.onclick = function(){
+        var sel_coor = document.getElementById("name_list").value;
+        disp_selected_name(sel_coor);  
+    };
+    
+    nOp.value = "Empty";
+    nSel.appendChild(nOp);;
+    nDiv.appendChild(nSel);
+    nDiv.appendChild(nBut);
+    document.body.appendChild(nDiv);
+}
+
+function populate_name_list(){
+    var working_arr = curr_selected_tree.slice();
+    var list_of_names = [];
+    var list_of_obj = [];
+    
+    for(var row = 0; row < working_arr.length; row += 2){
+        for(var index = 0; index < working_arr[row].length; index++){
+            if(working_arr[row][index].type == 'node'){
+                var new_obj = {};
+                new_obj["name"] = working_arr[row][index].name;
+                new_obj["coor"] = [index, row];
+                list_of_obj.push(new_obj);
+                list_of_names.push(working_arr[row][index].name);
+            }
+        }
+    }
+    
+    list_of_names.sort();
+    fill_name_list(list_of_names, list_of_obj);
+}
+
+function fill_name_list(input_arr, obj_arr){
+    var arr = input_arr.slice();
+    var working_obj_arr = obj_arr.slice();
+    var list = document.getElementById("name_list");
+    
+    for(var index = 0; index < arr.length; index++){
+        var nOp = document.createElement('option');
+        nOp.id = "name"+index;
+        for(var i = 0; i < working_obj_arr.length; i++){
+            if(arr[index] == working_obj_arr[i].name){
+                nOp.value = working_obj_arr[i].coor;
+            }
+        }
+        nOp.innerHTML = arr[index];
+        
+        list.appendChild(nOp);
+    }
+}
+
+function disp_selected_name(tree_coordinates){
+    var chosen_arr = tree_coordinates.split(",");
+    var chosen_x = chosen_arr[0];
+    var chosen_y = chosen_arr[1];
+    var chosen_obj = Object.assign(curr_selected_tree[chosen_y][chosen_x]);
+    
+    var single_obj_tree = [[chosen_obj]];
+    
+    if(prev_sel_name != chosen_obj.name){
+        
+        if(document.getElementById("chosen_obj_disp") != null){
+            delete_chosen_node();
+        }           
+        var nDiv = document.createElement('div');
+        nDiv.id = "selected_name_display";
+        document.getElementById("names_cont").appendChild(nDiv);
+        prev_sel_name = chosen_obj.name;
+        remove_info_box();
+        selected_node = -1;
+        disp_Tree(single_obj_tree, "chosen_obj_disp", "selected_name_display");
+        
+    }
+    
+
+    
+    
+}
+
+function delete_chosen_node(){
+    var display_node = document.getElementById("selected_name_display");
+    if(display_node != null){
+    document.getElementById("names_cont").removeChild(display_node);       
+    }
+    
+
+}
+
+function delete_name_list(){
+    if(document.getElementById("names_cont") != null){
+        var name_list_ele = document.getElementById("names_cont");
+        document.body.removeChild(name_list_ele);
+    }
+
+}
+
+function scroll_window(x, y){
+    /*
+    console.log(x, y)
+    console.log(window.innerHeight, window.innerWidth);
+    console.log(window.pageXOffset, window.pageYOffset);
+    */
+    var win_midX = window.pageXOffset + (window.innerWidth / 2);
+    var win_midY = window.pageYOffset + (window.innerHeight / 2);
+    
+    var obj_midX = x + 50;
+    var obj_midY = y + 50;
+    
+    var new_win_X = obj_midX - (window.innerWidth/2);
+    var new_win_Y = obj_midY - (window.innerHeight/2);
+    
+    //console.log(new_win_X, new_win_Y);
+    
+    //window.scrollTo(new_win_X, new_win_Y);
+    
+    var i = window.pageXOffset;
+    var j = window.pageYOffset;
+    
+    var x_inc = 10;
+    var y_inc = 10;
+    
+    if(new_win_X < i){
+        x_inc = -10;
+    }
+    
+    if(new_win_Y < j){
+        y_inc = -10;
+    }
+    
+    var start_X = window.pageXOffset;
+    var start_Y = window.pageYOffset;
+    
+    var int = setInterval(function() {
+        window.scrollTo(start_X, start_Y);
+        start_X += x_inc;
+        start_Y += y_inc;
+        if (start_X >= new_win_X && x_inc > 0){
+            start_X = new_win_X;
+            x_inc = 0;
+        } 
+        else if(start_X <= new_win_X && x_inc < 0){
+            start_X = new_win_X;
+            x_inc = 0;
+        }
+        
+        if(start_Y >= new_win_Y && y_inc > 0 ){
+            start_Y = new_win_Y;
+            y_inc = 0;
+        }
+        else if(start_Y <= new_win_Y && y_inc < 0){
+            start_Y = new_win_Y;
+            y_inc = 0;
+        }
+        
+        if(x_inc == 0 && y_inc == 0){
+            clearInterval(int);
+        }
+    }, 1);
+    
 }
 
 document.getElementById("selection1").addEventListener("click", function(){
     if(prev_selection != 1){
-        document.getElementById("selection1").style.backgroundColor = "rgba(5,5,5,0.5)";
-        document.getElementById("selection1").style.color = "rgb(250,250,250)";
-        reset_prev_selection();
-        prev_selection = 1;
+        set_selection(1);
+        
+        if(curr_selected_option != ""){
+            
+            var rarity_list = [];
+            var working_tree = curr_selected_tree.slice();
+
+
+
+            for(var row = 0; row < working_tree.length; row +=2){
+                for(var index = 0; index < working_tree[row].length; index++){
+                    if(working_tree[row][index].type == 'node'){
+                        if(rarity_list.indexOf(working_tree[row][index].rarity) == -1)
+                            rarity_list.push(working_tree[row][index].rarity);
+                    }
+
+                }
+            }
+
+            rarity_list.sort(function(a, b){return a-b});
+            create_rarity_list(rarity_list);
+            toggle_selection_box();
+            
+        }
+        
     }
+    
+
     
 });
 
 document.getElementById("selection2").addEventListener("click", function(){
     if(prev_selection != 2){
-        document.getElementById("selection2").style.backgroundColor = "rgba(5,5,5,0.5)";
-        document.getElementById("selection2").style.color = "rgb(250,250,250)";
-        reset_prev_selection();
-        prev_selection = 2;
+        set_selection(2);
+
+        if(curr_selected_option != ""){
+            create_name_list();
+            populate_name_list();
+            toggle_selection_box();
+        }
+
+        
+        
     }
+    
+
     
 });
 
 document.getElementById("selection3").addEventListener("click", function(){
     if(prev_selection != 3){
-        document.getElementById("selection3").style.backgroundColor = "rgba(5,5,5,0.5)";
-        document.getElementById("selection3").style.color = "rgb(250,250,250)";
-        reset_prev_selection();
-        prev_selection = 3;
+        set_selection(3);
+        var selected_tree = curr_selected_option;
+        //document.getElementById("tree_header_bot").innerHTML = document.getElementById("tree_header_bot").innerHTML + " Tree";
+        if (selected_tree != "Empty" && selected_tree != ""){
+            delete_tree();
+            disp_Tree(eval(selected_tree), "diagram", "content");
+            toggle_selection_box();
+        }
+        
     }
     
 });
 
 document.getElementById("selection_header").addEventListener("click", function(){
-    if(document.getElementById("selection_header").innerHTML != 'O'){
-        document.getElementById("selection_header").style.width = "16px";
-        document.getElementById("selection_header").innerHTML = 'O';
-        document.getElementById("selection").className = "select_box2 col-1 col-xm-1 col-sm-7 col-md-6 col-lg-4";
-        document.getElementById("selection").style.maxWidth = "140px";
-        
-    }
-    else{
-        document.getElementById("selection_header").style.width = "100%";
-        setTimeout(function(){
-            document.getElementById("selection_header").innerHTML = 'Choose an Option';
-        }, 100);
-        document.getElementById("selection").className = "select_box col-1 col-xm-1 col-sm-7 col-md-6 col-lg-4";
-        document.getElementById("selection").style.maxHeight = "";
-        
-    }
+    toggle_selection_box();
 });
 
+document.getElementById("selection_toggle").addEventListener("click", function(){
+    document.getElementById("selection").style.visibility = "hidden";
+    document.getElementById("selection").style.opacity = "0";
+    document.getElementById("selection").style.right = '-100px';
+    
+    document.getElementById("disp_select_button").style.visibility = "visible";
+    document.getElementById("disp_select_button").style.opacity = "1";
+});
+
+document.getElementById("disp_select_button").addEventListener("click", function(){
+    document.getElementById("selection").style.visibility = "visible";
+    document.getElementById("selection").style.opacity = "1";
+    document.getElementById("selection").style.right = '0px';
+    
+    document.getElementById("disp_select_button").style.visibility = "hidden";
+    document.getElementById("disp_select_button").style.opacity = "0";
+});
+
+
+document.getElementById("info_close").addEventListener("click", function(){
+    document.getElementById(selected_node).style.borderColor = 'dimgray';
+    remove_info_box();
+    selected_node = -1;
+   
+});
+
+document.getElementById("options_up_butt").addEventListener("click", function(){
+    var ele = document.getElementById("options_containter");
+    var ele_style = window.getComputedStyle(ele);
+    var ele_top = parseInt(ele_style.getPropertyValue('top'));
+    
+    var new_ele_top = ele_top + 100;
+    if(new_ele_top > 0){
+        new_ele_top = 0
+    }
+    ele.style.top = new_ele_top + 'px';
+});
+
+document.getElementById("options_down_butt").addEventListener("click", function(){
+    var ele = document.getElementById("options_containter");
+    var ele_style = window.getComputedStyle(ele);
+    var ele_top = parseInt(ele_style.getPropertyValue('top'));
+    var new_ele_top = ele_top - 100;
+    
+    var top_value2 = document.getElementById("options_bottom").offsetTop;
+
+    if((top_value2 + new_ele_top) < 0){
+        new_ele_top = -1 * top_value2;
+    }
+    console.log(top_value2);
+    console.log(new_ele_top);
+    ele.style.top = new_ele_top + 'px';
+});
+
+function reset_info_box(){
+    if(selected_node != -1){
+        var div_coor = Object.assign({},getPos(document.getElementById(selected_node)));
+        move_info_box(div_coor.x, div_coor.y);
+    }
+    
+}

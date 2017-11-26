@@ -1,3 +1,8 @@
+body{
+   
+    transition: 500ms;
+}
+
 #background{
     position: fixed;
     height: 100vh;
@@ -6,12 +11,13 @@
     left: 0px;
     background-image: url(Img/background.jpg);
     background-size:cover;
+    
 }
 
 #tree_header{
     z-index: 30;
     position: fixed;
-    top: 20px;
+    top: 24px;
     left: 0px;
     right: 0px;
     margin: auto;
@@ -24,6 +30,7 @@
     cursor: pointer;
     border: 3px groove;
     border-color: slategrey;
+    font-size: 11pt;
     
 }
 
@@ -557,6 +564,31 @@
     right: 0px;
     height: 100%;
 }
+
+#info_close{
+    position: absolute;
+    bottom: 2px;
+    right: 0px;
+    height: 40%;
+    width: 10%;
+
+    border: 1px solid;
+    border-color: red;
+    
+    text-align: center;
+    cursor: pointer;
+    
+}
+#info_close_txt{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    bottom: 1px;
+    font-size: 12pt;
+    text-align: center;
+    color: red;
+}
 /* ------------------------------------------------------ End of Info box styles ------------------------------------------------------ */
 
 /* ------------------------------------------------------ Tree styles ------------------------------------------------------ */
@@ -586,6 +618,7 @@
 
 #diagram{
     transition 1s;
+    font-family: Forte;
 }
 
 
@@ -635,45 +668,101 @@
 /* ------------------------------------------------------ Control styles ------------------------------------------------------ */
 #control{
     position:fixed;
-    z-index: 100;
-    right:15px;
-    top:3px;
+    z-index: 1;
+    right: -150px;
+    top:170px;
+    margin: auto;
     width:150px;
-    height:150;
+    height:46px;
     transition: 300ms;
+    visibility: hidden;
+    opacity: 0;
+    padding: 1px 2px;
+    background-color: rgba(120,120,250, 0.3);
+    
 }
 
-.control_elements{
+#show_ctr_button{
+    position: fixed;
+    top: 170px;
+    right: 0px;
+    width: 20px;
+    height: 75px;
+    background-image: url(Img/menu_bg.jpeg);
+    background-size: cover;
+    cursor: pointer;
+    color: transparent;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    
+}
+
+.control_list{
+    height: 20px;
     width: 100%;
+    z-index: 100;
 }
 
-#tree_selection{
-    height: 40%;
+.control_button{
+    bottom: 0px;
+    width: 48%;
+    height: 23px;
+    bottom: 0px;
+    box-sizing: border-box;
+    z-index: 100;
 }
 
 #gen_button{
-    height: 30%;
+    position: absolute;
+    left: 0px;
 }
 
 #del_button{
-    height: 30%;
+    position: absolute;
+    right: 0px;
 }
 
+
+
+#tree_selection{
+    text-align: center;
+}
 #min_bar{
     position: absolute;
     top: 0px;
-    left: -20px;
-    width: 20px;
+    left: -15px;
+    width: 15px;
     height: 100%;
     background-image: url(Img/menu_bg.jpeg);
     background-size: cover;
     cursor: pointer;
     color: transparent;
     overflow: hidden;
+    border-top: 1px ridge;
+    border-bottom: 1px ridge;
 }
 /* ------------------------------------------------------ End of Control styles -----------------------------------------------*/
 
 /* ------------------------------------------------------ Options styles -----------------------------------------------*/
+#options_bg{
+    z-index: 39;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    visibility: visible;
+    opacity: 1;
+    transition: 200ms;
+    min-height: 200px;
+    min-width: 190px;
+    background-color: steelblue;
+    border-right: 1px solid;
+    border-right-color: darkgoldenrod;
+    overflow:visible;
+    
+}
+
 #options{
     z-index: 40;
     position: fixed;
@@ -699,7 +788,8 @@
     width: 100%;
     height: 100%;
     background-color: steelblue;
-
+    font-family: Forte;
+    transition: 300ms;
     
 }
 
@@ -707,11 +797,32 @@
     z-index: 56;
     position: relative;
     display: block;
-    height:5%;
+    height:170px;
     min-height: 20px;
     width: 100%;
     background-color: steelblue;
+}
 
+#header_img_cont{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    margin: auto;
+    height: 70%;
+    width: 70%;
+}
+
+.normal_bg{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    margin: auto;
 }
 
 #options_top{
@@ -768,6 +879,7 @@
     border-right-color: darkgoldenrod;
     width: 100%;
     background-color: lightsteelblue;
+    
 }
 
 .equip_op{
@@ -780,7 +892,8 @@
     border-bottom: 1px solid;
     border-bottom-color: whitesmoke;
     cursor: pointer;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: Forte;
+    font-size: 11pt;
     
 }
 
@@ -802,7 +915,7 @@
     position: relative;
     display: block;
     height: 5%;
-    min-height: 20px;
+    min-height: 25px;
     width: 100%;
     transition: 50ms;
     background-color: steelblue;
@@ -824,6 +937,7 @@
     border-top: 1px groove;
     cursor: pointer;
     text-align: center;
+    min-height: 20px;
 }
 
 #options_toggle{
@@ -831,7 +945,7 @@
     position: absolute;
     height:50px;
     width: 50px;
-    top: 0px;
+    top: 170px;
     right: -50px;
     
 }
@@ -867,6 +981,42 @@
     height: 100%;
     width: 100%;
     cursor: pointer;
+}
+
+#options_up_butt{
+    position: absolute;
+    top: 0px;
+    right: -20px;
+    height: 75px;
+    width: 20px;
+    background-color: steelblue;
+    border: 2px ridge;
+    border-color: chocolate;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    cursor: pointer;
+}
+
+#options_down_butt{
+    position: absolute;
+    top: 75px;
+    right: -20px;
+    height: 75px;
+    width: 20px;
+    background-color: steelblue;
+    border: 2px ridge;
+    border-color: chocolate;
+    border-left-style: hidden;
+    border-top-style: hidden;
+    cursor: pointer;
+}
+
+.op_scrl_img{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%
 }
 
 
@@ -944,47 +1094,29 @@
 /* ------------------------------------------------------ End of Message styles -----------------------------------------------*/
 
 #selection{
-    
-    
-}
-
-.select_box{
     z-index: 998;
-    position: absolute;
+    position: fixed;
     top: 100px;
+    left: 0px;
     right: 0px;
+    margin: auto;
     height: 22px;
     min-width: 140px;    
     text-align: center;
     transition: 300ms;
-    visibility: visible;
-    opacity: 1;
-   
-}
-
-.select_box2{
-    z-index: 998;
-    position: absolute;
-    top: 100px;
-    right: 140px;
-    height: 22px;
-    min-width: 140px;    
-    text-align: center;
-    transition: 300ms;
-    visibility: visible;
-    opacity: 1;
+    visibility: hidden;
+    opacity: 0;
     
 }
 
 #selection_header{
     position: absolute;
-    top: -29px;
+    top: -26px;
     left: 0px;
     right: 0px;
     margin: auto;
     width: 100%;
-    height: 26px;
-    vertical-align: middle;
+    height: 25px;
     background-color: rgba(250,250,250,0.5);
     border: 2px ridge;
     border-color: chocolate;
@@ -992,6 +1124,7 @@
     visibility: visible;
     opacity: 1;
     transition: 300ms;
+    font-family: Forte;
 }
 
 .selectionBx{
@@ -1004,9 +1137,135 @@
     cursor: pointer;
     vertical-align:middle;
     margin: auto;
+    font-family: Forte;
 }
 
 .selectionBx:hover{
     background-color: rgb(250,250,250)!important;
     color: black!important;
+}
+
+#selection_toggle{
+    position: absolute;
+    top:  66px;
+    left: -15px;
+    margin: auto;
+    width: 15px;
+    height: 25px;
+    background-color: rgba(250,250,250,0.5);
+    border: 2px ridge;
+    border-color: chocolate;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: 200ms;
+    font-weight: bolder;
+    font-family: Forte;
+}
+
+.pointer_img{
+    width: 100%;
+    height: 100%;
+}
+
+#disp_select_button{
+    position: fixed;
+    top:  0px;
+    right: -0px;
+    width: 15px;
+    height: 25px;
+    vertical-align: middle;
+    background-color: rgba(250,250,250,0.5);
+    border: 2px ridge;
+    border-color: chocolate;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: 200ms;
+    font-weight: bolder;
+    font-family: Forte;
+}
+
+.header_text{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+#listings{
+    position: absolute;
+    top: 180px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    width: 210px;
+    visibility: visible;
+    transition: 300ms;
+    opacity: 1.0;
+    box-sizing: border-box;
+    
+}
+
+#rare_list_cont{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+    transition 300ms;
+}
+
+#rare_list{
+
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    margin: auto;
+    visibility: visible;
+    opacity: 1.0;
+    transition: 300ms;
+}
+
+#names_cont{
+    position: absolute;
+    top:180px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    width: 200px;
+    height: 46px;
+}
+
+#name_list{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    width: 100%;
+    height: 20px;
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+#name_sel_but{
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 23px;
+}
+
+#selected_name_display{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: -200px;
+    margin: auto;
+    width: 100px;
+    height: 100px;
 }
