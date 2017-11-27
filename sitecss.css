@@ -728,7 +728,7 @@ body{
 /* ------------------------------------------------------ Control styles ------------------------------------------------------ */
 #control{
     position:fixed;
-    z-index: 1;
+    z-index: 500;
     right: -150px;
     top:170px;
     margin: auto;
