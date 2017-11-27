@@ -104,7 +104,7 @@ function disp_Node(x, y, parent_id, tree_arr){
             selected_node = nDiv.id;
             nDiv.style.borderColor = 'turquoise';
             disp_info_box(x, y, tree_arr);
-            move_info_box(div_coor.x, div_coor.y);
+            move_info_box(div_coor.x - 60, div_coor.y - 60);
             scroll_window(div_coor.x, div_coor.y);
         }
         else{
@@ -119,7 +119,7 @@ function disp_Node(x, y, parent_id, tree_arr){
                 selected_node = nDiv.id;
                 nDiv.style.borderColor = 'turquoise';
                 disp_info_box(x, y, tree_arr);
-                move_info_box(div_coor.x, div_coor.y);
+                move_info_box(div_coor.x - 60, div_coor.y - 60);
                 //window.scrollTo(div_coor.x + 50, div_coor.y + 50);
                 scroll_window(div_coor.x, div_coor.y);
                 clear_cost_panel();
@@ -271,6 +271,9 @@ function toggle_page(page_num){
             document.getElementById("page_4").style.opacity = 0;
             document.getElementById("get_cost").style.visibility = "hidden";
             document.getElementById("get_cost").style.opacity = 0;
+            document.getElementById("info_img").style.visibility = "hidden";
+            document.getElementById("info_img").style.opacity = 0;
+            document.getElementById("preview_lable").innerHTML = "Preview";
             break;
         
         case 2:
@@ -284,6 +287,9 @@ function toggle_page(page_num){
             document.getElementById("page_4").style.opacity = 0;
             document.getElementById("get_cost").style.visibility = "visible";
             document.getElementById("get_cost").style.opacity = 1;
+            document.getElementById("info_img").style.visibility = "hidden";
+            document.getElementById("info_img").style.opacity = 0;
+            document.getElementById("preview_lable").innerHTML = "Preview";
             break;
             
         case 3:
@@ -297,6 +303,9 @@ function toggle_page(page_num){
             document.getElementById("page_4").style.opacity = 1;
             document.getElementById("get_cost").style.visibility = "visible";
             document.getElementById("get_cost").style.opacity = 1;
+            document.getElementById("info_img").style.visibility = "hidden";
+            document.getElementById("info_img").style.opacity = 0;
+            document.getElementById("preview_lable").innerHTML = "Preview";
             break;
             
         case 4:
@@ -310,7 +319,25 @@ function toggle_page(page_num){
             document.getElementById("page_4").style.opacity = 0;
             document.getElementById("get_cost").style.visibility = "hidden";
             document.getElementById("get_cost").style.opacity = 0;
+            document.getElementById("info_img").style.visibility = "hidden";
+            document.getElementById("info_img").style.opacity = 0;
+            document.getElementById("preview_lable").innerHTML = "Preview";
             break;
+            
+        case 5:
+            document.getElementById("page_1").style.visibility = "hidden";
+            document.getElementById("page_1").style.opacity = 0;
+            document.getElementById("page_2").style.visibility = "hidden";
+            document.getElementById("page_2").style.opacity = 0;
+            document.getElementById("page_3").style.visibility = "hidden";
+            document.getElementById("page_3").style.opacity = 0;
+            document.getElementById("page_4").style.visibility = "hidden";
+            document.getElementById("page_4").style.opacity = 0;
+            document.getElementById("get_cost").style.visibility = "hidden";
+            document.getElementById("get_cost").style.opacity = 0;
+            document.getElementById("info_img").style.visibility = "visible";
+            document.getElementById("info_img").style.opacity = 1;
+            document.getElementById("preview_lable").innerHTML = "End Preview";
     }
 }
 
@@ -330,13 +357,12 @@ function disp_info_box(x, y, tree_arr){
     
     document.getElementById("info_box").style.visibility = "visible";
     document.getElementById("info_box").style.opacity = 1;
-    document.getElementById("page_1").style.visibility = "visible";
-    document.getElementById("page_1").style.opacity = 1;
+    toggle_page(4);
     
     var new_y = document.getElementById("info_box").offsetTop;
     var new_x = document.getElementById("info_box").offsetleft;
     
-    document.getElementById("main_cost_panel").style.top = "0px";
+    document.getElementById("main_cost_panel").style.bottom = "0px";
     document.getElementById("main_cost_panel").style.left = "0px";
     document.getElementById("shop_cost_line").innerHTML = "";
     document.getElementById("main_cost_panel").style.visibility = "hidden";
@@ -365,8 +391,8 @@ function clear_material_info(){
 
 function update_info_box(node_object){
     clear_material_info();
-    document.getElementById("info_name").innerHTML = node_object.name;
-    document.getElementById("info_name").style.color = update_rare_color(node_object.rarity);
+    document.getElementById("info_box_header").innerHTML = node_object.name;
+    document.getElementById("info_box_header").style.color = update_rare_color(node_object.rarity);
     document.getElementById("info_rare").innerHTML = "Rarity " + node_object.rarity;
     document.getElementById("info_rare").style.color = update_rare_color(node_object.rarity);
     document.getElementById("atk_val").innerHTML = node_object.attack;
@@ -503,6 +529,8 @@ function remove_info_box(){
     document.getElementById("page_3").style.opacity = 0;
     document.getElementById("page_4").style.visibility = "hidden";
     document.getElementById("page_4").style.opacity = 0;
+    document.getElementById("info_img").style.visibility = "hidden";
+    document.getElementById("info_img").style.opacity = 0;
     document.getElementById("get_cost").style.visibility = "hidden";
     document.getElementById("get_cost").style.opacity = 0;
     info_box_present = false;
@@ -640,7 +668,7 @@ function hide_header(){
 
 function update_header(selection){
     var wpn_class = document.getElementById(selection).innerHTML;
-    var display_string = wpn_class + " Tree";
+    var display_string = "Type: " + wpn_class;
     document.getElementById("tree_header_top").innerHTML = display_string;
     display_tree_header();
 }
@@ -787,13 +815,6 @@ function dragPanel(panel){
 
 function append_craft_options (cost_arr){
     var work_arr = cost_arr.slice();
-    if(document.getElementById("options_cont").innerHTML != ""){
-        return;
-    }
-    if(cost_arr[0] != "N/A"){
-        document.getElementById("shop_cost_line").innerHTML = "Buy for " + cost_arr[0];
-    }
-    
     var num_options = 0;
     if(cost_arr[1].length > 0){
         
@@ -803,8 +824,20 @@ function append_craft_options (cost_arr){
     var container_height = (num_options  * 20) + 50;
     var panel_height = container_height + 41;
     
+    
+    
+    document.getElementById("main_cost_panel").style.top = "0px";
+    
+    if(document.getElementById("options_cont").innerHTML != ""){
+        return;
+    }
+    
     document.getElementById("main_cost_panel").style.height = panel_height + "px";
     document.getElementById("options_cont").style.height = container_height + "px";
+    
+    if(cost_arr[0] != "N/A"){
+        document.getElementById("shop_cost_line").innerHTML = "Buy for " + cost_arr[0];
+    }
     
     if(cost_arr[1].length > 0 || work_arr[2].length > 0){
         var op_nDiv = document.createElement('div');
@@ -840,6 +873,21 @@ function append_craft_options (cost_arr){
         }
     }
     
+    var op_Close = document.createElement('div');
+    
+    op_Close.id = "close_option_div";
+    op_Close.innerHTML = "Close Acquisition Options";
+    op_Close.onclick = function(){
+        document.getElementById("main_cost_panel").style.top = "0px";
+        document.getElementById("main_cost_panel").style.left = "0px";
+        document.getElementById("shop_cost_line").innerHTML = "";
+        document.getElementById("main_cost_panel").style.visibility = "hidden";
+        document.getElementById("main_cost_panel").style.opacity = "0";
+        clear_cost_panel();
+        
+    };
+    document.getElementById("options_cont").appendChild(op_Close);
+    
 }
 
 function create_option(mat_obj, index, parent_height){
@@ -864,6 +912,7 @@ function expand_option(mat_obj, option_id, cont_height){
     var working_arr = Object.assign({}, mat_obj);
     var key_list = Object.keys(working_arr);
     var height_offset = cont_height;
+    
     if(option_id == selected_option_id){
         return;
     }
@@ -890,14 +939,18 @@ function expand_option(mat_obj, option_id, cont_height){
     }
     
     
-    var window_height = ((key_list.length + 1) * 21) + 10;
+    var window_height = ((key_list.length + 1) * 21) + 52;
     
     if(document.getElementById("details_container").innerHTML != ""){
         document.getElementById("details_container").innerHTML = "";
     }
     else{
-        document.getElementById("details_container").style.left = "-206px";
-        document.getElementById("details_container").style.top = (-1 * (window_height - height_offset)) + 'px';
+        document.getElementById("details_container").style.visibility = "visible";
+        document.getElementById("details_container").style.opacity = "1";
+        
+        document.getElementById("details_container").style.left = "-2px";
+        //document.getElementById("details_container").style.top = (-1 * (window_height - height_offset)) + 'px';
+        document.getElementById("details_container").style.top = '0px';
         //document.getElementById("details_container").style.bottom = "0px";
     }
     
@@ -909,8 +962,20 @@ function expand_option(mat_obj, option_id, cont_height){
     op_head.className = "options_header";
     op_head.id = "details_container_header";
     document.getElementById("details_container").appendChild(op_head);
+    //var header_string = working_arr.Method.slice(0,1) + ": " + working_arr.Base + " Total Cost";
     op_head.innerHTML = "Total Cost";
+    //op_head.innerHTML = header_string;
+    op_head.style.fontSize = "9pt";
     dragPanel(document.getElementById("details_container"));
+    
+    var nBase = document.createElement('div');
+    nBase.id = "option_base";
+    nBase.className = "total_info_line";
+    nBase.style.color = "white";
+    nBase.style.textAlign = "center";
+    nBase.innerHTML = document.getElementById(option_id).innerHTML;
+    document.getElementById("details_container").appendChild(nBase);
+    
     
     //console.log(key_list);
     key_list.sort();
@@ -920,6 +985,26 @@ function expand_option(mat_obj, option_id, cont_height){
         }
     }
     add_mat("Cost", working_arr["Cost"], "details_container");
+    
+    var nClose = document.createElement('div');
+    nClose.id = "close_details_pan";
+    nClose.className = "total_info_line";
+    nClose.innerHTML = "Close Cost Panel";
+    
+    nClose.onclick = function(){
+        document.getElementById(selected_option_id).style.color = "white";
+        document.getElementById(selected_option_id).style.backgroundColor = "black";
+        //document.getElementById("details_container").innerHTML = "";
+        selected_option_id = "";
+        while (document.getElementById("details_container").hasChildNodes()) {
+            document.getElementById("details_container").removeChild(document.getElementById("details_container").lastChild);
+        }
+        
+        close_expanded_options();
+        
+    };
+    
+    document.getElementById("details_container").appendChild(nClose);
 }
 
 function add_mat (mat_name, mat_amt, parent_id){
@@ -973,6 +1058,9 @@ document.getElementById('gen_button').addEventListener("click", function(){
             curr_selected_tree = eval(curr_selected_option).slice();
         
         }
+        else{
+            display_tree_header();
+        }
         
     }
     
@@ -981,36 +1069,47 @@ document.getElementById('gen_button').addEventListener("click", function(){
 });
 
 document.getElementById('del_button').addEventListener("click", function(){
-    delete_tree();
+
     
     remove_info_box();
-    selected_node = -1;
+
     if(document.getElementById("rare_list") != null){
-        delete_rare_list();
-        document.getElementById("listings").style.visibility = "visible";
+        reshow_listings();
     }
     else if(document.getElementById("chosen_obj_disp") != null){
         delete_chosen_node();
     }
     else{
+        delete_tree();
+        selected_node = -1;
         delete_listings();
         reset_prev_selection();
-        disp_selection_box();
+        //disp_selection_box();
         delete_name_list();
         curr_selected_option = '';
         document.getElementById("tree_selection").value = "Empty";
+        document.getElementById("tree_header_bot").innerHTML = "";
+        
+        document.getElementById("disp_select_button").style.visibility = "hidden";
+        document.getElementById("disp_select_button").style.opacity = "0";
+
+        document.getElementById("selection").style.visibility = "hidden";
+        document.getElementById("selection_header").style.visibility = "hidden";
+        document.getElementById("selection").style.opacity = "0";
+        document.getElementById("selection_header").style.opacity = "0";
+        
+        
     }
     
     
-    document.getElementById("tree_header_bot").innerHTML = "";
+    
 });
 
 document.getElementById("toggle_img").addEventListener("click", function(){
     document.getElementById("options").style.visibility = 'hidden';
     document.getElementById("options").style.opacity = '0';
 
-    document.getElementById("options_bg").style.visibility = 'hidden';
-    document.getElementById("options_bg").style.opacity = '0';
+
     
     document.getElementById("toggle_button").style.visibility = 'visible';
     document.getElementById("toggle_button").style.opacity = '1';
@@ -1021,8 +1120,7 @@ document.getElementById("toggle_button").addEventListener("click", function(){
     document.getElementById("toggle_button").style.visibility = 'hidden';
     document.getElementById("toggle_button").style.opacity = '0';
     
-    document.getElementById("options_bg").style.visibility = 'visible';
-    document.getElementById("options_bg").style.opacity = '1';
+
     
     document.getElementById("options").style.visibility = 'visible';
     document.getElementById("options").style.opacity = '1';
@@ -1107,9 +1205,12 @@ document.getElementById("op_armor").addEventListener("click", function(){
 });
 
 document.getElementById("get_cost").addEventListener("click", function(){
+    
+    
+
     var selected_name = document.getElementById(selected_node+"_title").innerHTML;
     var chosen_node = {};
-    
+
     for(var row = 0; row < curr_selected_tree.length; row++){
         for (var col = 0; col < curr_selected_tree[row].length; col++){
             if(selected_name == curr_selected_tree[row][col].name){
@@ -1119,20 +1220,25 @@ document.getElementById("get_cost").addEventListener("click", function(){
         }
     }
     var cost_arr = calculate_cost(chosen_node);
-    document.getElementById("main_cost_panel").style.left = '-209px';
-    document.getElementById("main_cost_panel").style.top = '0px';
 
+
+    document.getElementById("main_cost_panel").style.left = '0px';
+    document.getElementById("main_cost_panel").style.top = '0px';
     if(document.getElementById("details_container") != null){
-        document.getElementById("details_container").style.left = "-206px";
-        document.getElementById("details_container").style.top = "-21px";
+        document.getElementById("details_container").style.left = "-2px";
+        document.getElementById("details_container").style.top = "0px";
+
     }
     document.getElementById("main_cost_panel").style.visibility = "visible";
     document.getElementById("main_cost_panel").style.opacity = "1";
     document.getElementById("main_cost_panel_header").innerHTML = chosen_node.name;
     document.getElementById("main_cost_panel_header").style.color = update_rare_color(chosen_node.rarity);
-    //console.log(cost_arr);
-        
+    //console.log(cost_arr);   
     append_craft_options(cost_arr);
+    
+
+
+
 });
 
 document.getElementById("min_bar").addEventListener("click", function(){
@@ -1148,6 +1254,7 @@ document.getElementById("min_bar").addEventListener("click", function(){
 });
 
 dragPanel(document.getElementById("main_cost_panel"));
+dragPanel(document.getElementById("info_box"));
 /*===============================================INDEX STUFF===============================================*/
 
 var prev_selection = -1;
@@ -1195,6 +1302,8 @@ function disp_selection_box(){
         document.getElementById("selection").style.right = "0px";
         document.getElementById("selection_toggle").style.visibility = "hidden";
         document.getElementById("selection_toggle").style.opacity = "0";
+        document.getElementById("selection_header").style.visibility = "visible";
+        document.getElementById("selection_header").style.opacity = "1";
         
         
         setTimeout(function(){
@@ -1256,14 +1365,19 @@ function create_rarity_list(rare_list){
     var nDiv = document.createElement('div');
     var D_height = 20 * rare_list.length + 50;
     var is_first = false;
+    var nCont = document.createElement('div');
+    
+    nCont.id = "rare_list_cont";
     nDiv.id = "listings";
     nDiv.style.height = D_height + 'px';
+    nCont.style.height = D_height + 'px';
     
     for(var index = 0;index < rare_list.length; index++){
         is_first = (index == 0);
-        append_rare_list(rare_list[index], nDiv, is_first);
+        append_rare_list(rare_list[index], nCont, is_first);
     }
     
+    nDiv.appendChild(nCont);
     document.body.appendChild(nDiv);
 }
 
@@ -1282,7 +1396,8 @@ function append_rare_list(rarity, parent, is_first){
     
     nBox.onclick = function(){
         //document.getElementById("listings").style.opacity = "0";
-        document.getElementById("listings").style.visibility = "hidden";
+        document.getElementById("rare_list_cont").style.visibility = "hidden";
+        document.getElementById("rare_list_cont").style.opacity = "0";
         list_wpn_by_rarity(rarity_value);
         
         
@@ -1291,9 +1406,29 @@ function append_rare_list(rarity, parent, is_first){
     parent.appendChild(nBox);
 }
 
+function reshow_listings(){
+    
+    if(document.getElementById("rare_list") != null){
+        delete_rare_list();
+        document.getElementById("rare_list_cont").style.visibility = "visible";
+        document.getElementById("rare_list_cont").style.opacity = "1";
+    }
+    
+
+}
+
 function list_wpn_by_rarity(input_rarity){
     var working_tree = curr_selected_tree.slice();
     var wpn_list = [];
+    
+    var nBut = document.createElement('button');
+    nBut.id = "rare_list_back_but";
+    nBut.innerHTML = "Back";
+    nBut.onclick = function(){
+        reshow_listings();
+    }
+    
+    
     
     for(var row = 0; row < working_tree.length; row +=2){
         for(var index = 0; index < working_tree[row].length; index++){
@@ -1308,6 +1443,7 @@ function list_wpn_by_rarity(input_rarity){
     //console.log(output_arr);
     disp_Tree(formatted_arr, "rare_list", "listings");
     //document.getElementById("rare_list").style.opacity = "1";
+    document.getElementById("rare_list").appendChild(nBut);
 }
 
 function transpose_arr(input_arr){
@@ -1334,6 +1470,7 @@ function getPos(el) {
 function move_info_box(x_coor, y_coor){
     document.getElementById("info_box").style.top = y_coor + 'px';
     document.getElementById("info_box").style.left = x_coor + 'px';
+    
 }
 
 function create_name_list(){
@@ -1511,6 +1648,20 @@ function scroll_window(x, y){
     
 }
 
+function reset_info_box(){
+    if(selected_node != -1){
+        var div_coor = Object.assign({},getPos(document.getElementById(selected_node)));
+        move_info_box(div_coor.x - 60, div_coor.y - 60);
+    }
+    
+}
+
+function close_expanded_options(){
+    document.getElementById("details_container").style.height = "0px";
+    document.getElementById("details_container").style.visibility = "hidden";
+    document.getElementById("details_container").style.opacity = "0";
+}
+
 document.getElementById("selection1").addEventListener("click", function(){
     if(prev_selection != 1){
         set_selection(1);
@@ -1635,10 +1786,16 @@ document.getElementById("options_down_butt").addEventListener("click", function(
     ele.style.top = new_ele_top + 'px';
 });
 
-function reset_info_box(){
-    if(selected_node != -1){
-        var div_coor = Object.assign({},getPos(document.getElementById(selected_node)));
-        move_info_box(div_coor.x, div_coor.y);
-    }
+document.getElementById("preview_lable").addEventListener("click", function(){
+    var prev_lable = document.getElementById("preview_lable");
     
-}
+    if(prev_lable.innerHTML == "Preview"){
+        toggle_page(5);
+        
+    }
+    else{
+        
+        toggle_page(4);
+    }
+});
+
