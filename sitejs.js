@@ -166,7 +166,13 @@ function disp_Tree(tree_arr, id_name, parent_id){
     nDiv.style.backgroundImage = "url(Img/tree_back.jpg)";
     nDiv.style.backgroundSize = "cover";
     nDiv.style.transition = "300ms";
-    nDiv.className = "tree_diagram";
+    
+    if(id_name == "rare_list"){
+        nDiv.className = "tree_diagram2";
+    }
+    else{
+        nDiv.className = "tree_diagram";
+    }
     
     var height = tree_arr.length * 100;
     var width = 0;
@@ -965,7 +971,7 @@ function expand_option(mat_obj, option_id, cont_height){
     //var header_string = working_arr.Method.slice(0,1) + ": " + working_arr.Base + " Total Cost";
     op_head.innerHTML = "Total Cost";
     //op_head.innerHTML = header_string;
-    op_head.style.fontSize = "9pt";
+    //op_head.style.fontSize = "9pt";
     dragPanel(document.getElementById("details_container"));
     
     var nBase = document.createElement('div');
@@ -1097,6 +1103,8 @@ document.getElementById('del_button').addEventListener("click", function(){
         document.getElementById("selection_header").style.visibility = "hidden";
         document.getElementById("selection").style.opacity = "0";
         document.getElementById("selection_header").style.opacity = "0";
+        
+        display_tree_header();
         
         
     }

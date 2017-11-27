@@ -502,6 +502,9 @@ body{
     top: -21px;
     width: 100%;
     
+    visibility: hidden;
+    opacity: 0;
+    
     background-color: black;
     transition: 150ms;
     border: 2px groove;
@@ -649,6 +652,22 @@ body{
 }@keyframes drop {
     from {top: -3000px}
     to {top: 0px}
+}
+
+.tree_diagram2{
+    -webkit-animation: drop2 300ms;
+    animation: drop2 1s;
+    top: 50px;
+    
+}
+
+@-webkit-keyframes drop2 {
+    from {top: -3000px}
+    to {top: 50px}
+    
+}@keyframes drop2 {
+    from {top: -3000px}
+    to {top: 50px}
 }
 
 #diagram2{
@@ -1267,7 +1286,7 @@ body{
     position: absolute;
     left: 0px;
     right: 0px;
-    top: 0px;
+    top: 50px;
     margin: auto;
     visibility: visible;
     opacity: 1.0;
