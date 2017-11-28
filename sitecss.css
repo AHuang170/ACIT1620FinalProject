@@ -1347,3 +1347,48 @@ body{
     background-color: white!important;
     color: black!important;
 }
+
+#hi_butt{
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 100px;
+    height: 20px;
+}
+
+#clipboard{
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+}
+
+#play_button{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 0px;
+    right: 0px;
+
+}
+
+#playback_img{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    
+}
+
+#save_button{
+    text-align: center;
+    cursor: pointer;
+    background-color: black;
+    color: skyblue;
+}
+
+#save_button:hover{
+    background-color: rgb(250,250,250)!important;
+    color: darkblue;
+}
